@@ -3,7 +3,6 @@ const mysql = require('mysql2/promise');
 exports.handler = async (event) => {
   try {
     const { nombre, correo } = JSON.parse(event.body);
-
     if (!nombre || !correo) {
       return {
         statusCode: 400,
@@ -26,17 +25,12 @@ exports.handler = async (event) => {
 
     await connection.end();
 
-    if (rows.length > 0) {
-      return {
-        statusCode: 200,
-        body: JSON.stringify({ status: 'success' }),
-      };
-    } else {
-      return {
-        statusCode: 200,
-        body: JSON.stringify({ status: 'fail' }),
-      };
-    }
+    return {
+      statusCode: 200,
+      body: JSON.stringify({
+        status: rows.length > 0 ? 'success' : 'fail',
+      }),
+    };
   } catch (err) {
     return {
       statusCode: 500,

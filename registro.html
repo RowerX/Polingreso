@@ -18,16 +18,13 @@
                 <h2>Registrarse</h2>
                     <form id="registro-form">
                         <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" name="nombre" required>
+                        <input type="text" id="nombre" required>
 
                         <label for="correo">Correo</label>
-                        <input type="email" id="correo" name="correo" required>
+                        <input type="email" id="correo" required>
 
                         <button type="submit">Registrarse</button>
-                       <p class="login-link">¿Ya tienes cuenta? <a href="index.html">Inicia sesión aquí</a></p>
-                </form>
                     </form>
-
             </div>
         </section>
     </main>
@@ -39,31 +36,30 @@
 </html>
 <script>
     document.getElementById('registro-form').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const nombre = document.getElementById('nombre').value.trim();
-        const correo = document.getElementById('correo').value.trim();
+    e.preventDefault();
+    const nombre = document.getElementById('nombre').value.trim();
+    const correo = document.getElementById('correo').value.trim();
 
-        try {
-            const respuesta = await fetch('/.netlify/functions/registrar', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ nombre, correo })
-            });
+    try {
+        const respuesta = await fetch('/.netlify/functions/registrar', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ nombre, correo })
+        });
 
-            const resultado = await respuesta.text();
-            console.log('Respuesta del servidor:', resultado);
+        const texto = await respuesta.text();
 
-            if (resultado === 'Registro exitoso') {
-                window.location.href = 'index.html';
-            } else {
-                alert(resultado); 
-            }
-        } catch (error) {
-            console.error('Error al registrar:', error);
-            alert('Ocurrió un error al registrar. Inténtalo de nuevo.');
+        if (respuesta.ok && texto === 'Registro exitoso') {
+            window.location.href = 'index.html';
+        } else {
+            alert(texto);
         }
-    });
+    } catch (error) {
+        console.error('Error al registrar:', error);
+        alert('Error al registrar. Intenta de nuevo.');
+    }
+});
 </script>
 
