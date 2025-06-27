@@ -41,7 +41,7 @@
     const correo = document.getElementById('correo').value.trim();
 
     try {
-        const respuesta = await fetch('/.netlify/functions/registrar', {
+        const respuesta = await fetch("/.netlify/functions/registrar", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -1,35 +1,41 @@
-const mysql = require('mysql2/promise');
+const db = require('./db');
 
 exports.handler = async (event) => {
   try {
     const { nombre, correo } = JSON.parse(event.body);
 
-    const connection = await mysql.createConnection({
-      host: process.env.DB_HOST,
-      port: process.env.DB_PORT,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASS,
-      database: process.env.DB_NAME
-    });
+    if (!nombre || !correo) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ status: 'error', message: 'Faltan datos' }),
+      };
+    }
 
-    const [rows] = await connection.execute('SELECT * FROM usuarios WHERE nombre = ? AND correo = ?', [nombre, correo]);
+    const connection = await db.connect();
+
+    const [rows] = await connection.execute(
+      'SELECT * FROM usuarios WHERE nombre = ? AND correo = ?',
+      [nombre.trim(), correo.trim().toLowerCase()]
+    );
+
+    await db.disconnect(connection);
 
     if (rows.length > 0) {
       return {
         statusCode: 200,
-        body: JSON.stringify({ status: 'success', usuario: rows[0] })
+        body: JSON.stringify({ status: 'success', message: 'Login correcto' }),
       };
     } else {
       return {
-        statusCode: 200,
-        body: JSON.stringify({ status: 'fail' })
+        statusCode: 401,
+        body: JSON.stringify({ status: 'error', message: 'Credenciales incorrectas' }),
       };
     }
+
   } catch (err) {
-    console.error('Error en login.js:', err);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Error interno del servidor' })
+      body: JSON.stringify({ status: 'error', message: 'Error: ' + err.message }),
     };
   }
 };

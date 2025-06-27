@@ -1,38 +1,47 @@
-const mysql = require('mysql2/promise');
+const db = require('./db');
 
 exports.handler = async (event) => {
   try {
     const { nombre, correo } = JSON.parse(event.body);
+
     if (!nombre || !correo) {
       return {
         statusCode: 400,
-        body: 'Faltan datos',
+        body: JSON.stringify({ status: 'error', message: 'Faltan datos' }),
       };
     }
 
-    const connection = await mysql.createConnection({
-      host: process.env.DB_HOST,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME,
-      port: process.env.DB_PORT,
-    });
+    const connection = await db.connect();
+
+    const [existente] = await connection.execute(
+      'SELECT * FROM usuarios WHERE correo = ?',
+      [correo.trim().toLowerCase()]
+    );
+
+    if (existente.length > 0) {
+      await db.disconnect(connection);
+      return {
+        statusCode: 409,
+        body: JSON.stringify({ status: 'error', message: 'Correo ya registrado' }),
+      };
+    }
 
     await connection.execute(
       'INSERT INTO usuarios (nombre, correo) VALUES (?, ?)',
       [nombre.trim(), correo.trim().toLowerCase()]
     );
 
-    await connection.end();
+    await db.disconnect(connection);
 
     return {
       statusCode: 200,
-      body: 'Registro exitoso',
+      body: JSON.stringify({ status: 'success', message: 'Registro exitoso' }),
     };
+
   } catch (err) {
     return {
       statusCode: 500,
-      body: 'Error en base de datos: ' + err.message,
+      body: JSON.stringify({ status: 'error', message: 'Error: ' + err.message }),
     };
   }
 };
