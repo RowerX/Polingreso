@@ -36,44 +36,46 @@
 
    <script>
     document.getElementById('login-form').addEventListener('submit', async (e) => {
-        e.preventDefault();
+    e.preventDefault();
 
-        const nombre = document.getElementById('usuario').value.trim();
-        const correo = document.getElementById('correo').value.trim();
+    const nombre = document.getElementById('usuario').value.trim();
+    const correo = document.getElementById('correo').value.trim();
 
-        if (!nombre || !correo) {
-            alert('Por favor, completa todos los campos');
+    if (!nombre || !correo) {
+        alert('Por favor, completa todos los campos');
+        return;
+    }
+
+    try {
+        const response = await fetch('/.netlify/functions/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ nombre, correo })
+        });
+
+        if (!response.ok) {
+            console.error('Error de red:', response.status);
+            alert('Error del servidor');
             return;
         }
 
-        try {
-            const response = await fetch('http://localhost:3000/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ nombre, correo })
-            });
+        const result = await response.json();
 
-            if (!response.ok) {
-                console.error('Error de red:', response.status);
-                alert('Error del servidor');
-                return;
-            }
+        console.log('Resultado del login:', result);
 
-            const result = await response.text();
-            console.log('Resultado del login:', result);
-
-            if (result === 'success') {
-                window.location.href = 'bienvenido.html';
-            } else {
-                alert('Credenciales incorrectas');
-            }
-        } catch (error) {
-            console.error('Error al hacer fetch:', error);
-            alert('No se pudo conectar con el servidor');
+        if (result.status === 'success') {
+            window.location.href = 'bienvenido.html';
+        } else {
+            alert('Credenciales incorrectas');
         }
-    });
+    } catch (error) {
+        console.error('Error al hacer fetch:', error);
+        alert('No se pudo conectar con el servidor');
+    }
+});
+
 </script>
 
 </body>
