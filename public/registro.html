@@ -16,15 +16,16 @@
         <section>
             <div class="login-box">
                 <h2>Registrarse</h2>
-                    <form id="registro-form">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" required>
+                <form id="registro-form">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" required>
 
-                        <label for="correo">Correo</label>
-                        <input type="email" id="correo" required>
+                    <label for="correo">Correo</label>
+                    <input type="email" id="correo" required>
 
-                        <button type="submit">Registrarse</button>
-                    </form>
+                    <button type="submit">Registrarse</button>
+                </form>
+                <p id="mensaje" style="color: green; margin-top: 10px;"></p>
             </div>
         </section>
     </main>
@@ -34,32 +35,36 @@
     </footer>
 </body>
 </html>
+
 <script>
     document.getElementById('registro-form').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const nombre = document.getElementById('nombre').value.trim();
-    const correo = document.getElementById('correo').value.trim();
+        e.preventDefault();
+        const nombre = document.getElementById('nombre').value.trim();
+        const correo = document.getElementById('correo').value.trim();
+        const mensajeElem = document.getElementById('mensaje');
 
-    try {
-        const respuesta = await fetch("/.netlify/functions/registrar", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ nombre, correo })
-        });
+        try {
+            const respuesta = await fetch("/.netlify/functions/registrar", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ nombre, correo })
+            });
 
-        const texto = await respuesta.text();
+            const texto = await respuesta.text();
 
-        if (respuesta.ok && texto === 'Registro exitoso') {
-            window.location.href = 'index.html';
-        } else {
-            alert(texto);
+            if (respuesta.ok && texto === 'Registro exitoso') {
+                mensajeElem.textContent = 'Registrado correctamente. Redirigiendo...';
+                setTimeout(() => {
+                    window.location.href = 'bienvenido.html';
+                }, 3000);
+            } else {
+                alert(texto);
+            }
+        } catch (error) {
+            console.error('Error al registrar:', error);
+            alert('Error al registrar. Intenta de nuevo.');
         }
-    } catch (error) {
-        console.error('Error al registrar:', error);
-        alert('Error al registrar. Intenta de nuevo.');
-    }
-});
+    });
 </script>
-
