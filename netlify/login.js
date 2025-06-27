@@ -3,38 +3,33 @@ const mysql = require('mysql2/promise');
 exports.handler = async (event) => {
   try {
     const { nombre, correo } = JSON.parse(event.body);
-    if (!nombre || !correo) {
-      return {
-        statusCode: 400,
-        body: 'Faltan datos',
-      };
-    }
 
     const connection = await mysql.createConnection({
       host: process.env.DB_HOST,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME,
       port: process.env.DB_PORT,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASS,
+      database: process.env.DB_NAME
     });
 
-    const [rows] = await connection.execute(
-      'SELECT * FROM usuarios WHERE nombre = ? AND correo = ?',
-      [nombre.trim(), correo.trim().toLowerCase()]
-    );
+    const [rows] = await connection.execute('SELECT * FROM usuarios WHERE nombre = ? AND correo = ?', [nombre, correo]);
 
-    await connection.end();
-
-    return {
-      statusCode: 200,
-      body: JSON.stringify({
-        status: rows.length > 0 ? 'success' : 'fail',
-      }),
-    };
+    if (rows.length > 0) {
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ status: 'success', usuario: rows[0] })
+      };
+    } else {
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ status: 'fail' })
+      };
+    }
   } catch (err) {
+    console.error('Error en login.js:', err);
     return {
       statusCode: 500,
-      body: 'Error en base de datos: ' + err.message,
+      body: JSON.stringify({ error: 'Error interno del servidor' })
     };
   }
 };
