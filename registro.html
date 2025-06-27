@@ -44,7 +44,7 @@ document.getElementById('registro-form').addEventListener('submit', async (e) =>
     const correo = document.getElementById('correo').value.trim();
 
     try {
-        const respuesta = await fetch('http://localhost:3000/registrar', {
+        const respuesta = await fetch('/.netlify/functions/registrar', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -66,3 +66,4 @@ document.getElementById('registro-form').addEventListener('submit', async (e) =>
     }
 });
 </script>
+
