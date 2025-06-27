@@ -2,23 +2,22 @@ const db = require('./db');
 
 exports.handler = async (event) => {
   try {
-    const { nombre, correo } = JSON.parse(event.body);
+    console.log("🟡 login.js - evento recibido:", event.body);
 
-    if (!nombre || !correo) {
-      return {
-        statusCode: 400,
-        body: JSON.stringify({ status: 'error', message: 'Faltan datos' }),
-      };
-    }
+    const { nombre, correo } = JSON.parse(event.body);
+    console.log("🟢 Datos recibidos:", nombre, correo);
 
     const connection = await db.connect();
+    console.log("✅ Conexión a base de datos establecida");
 
     const [rows] = await connection.execute(
       'SELECT * FROM usuarios WHERE nombre = ? AND correo = ?',
       [nombre.trim(), correo.trim().toLowerCase()]
     );
+    console.log("🔍 Resultados:", rows);
 
     await db.disconnect(connection);
+    console.log("🔒 Conexión cerrada");
 
     if (rows.length > 0) {
       return {
@@ -33,9 +32,10 @@ exports.handler = async (event) => {
     }
 
   } catch (err) {
+    console.error("❌ ERROR en login.js:", err.message);
     return {
       statusCode: 500,
-      body: JSON.stringify({ status: 'error', message: 'Error: ' + err.message }),
+      body: JSON.stringify({ status: 'error', message: err.message }),
     };
   }
 };
