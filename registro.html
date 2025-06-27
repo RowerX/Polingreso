@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polingreso - Registro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>POLINGRESO</h1>
+        <p>ENCUENTRA TU ESCUELA, ENCUENTRA TU FUTURO</p>
+    </header>
+
+    <main>
+        <section>
+            <div class="login-box">
+                <h2>Registrarse</h2>
+                    <form id="registro-form">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+
+                        <label for="correo">Correo</label>
+                        <input type="email" id="correo" name="correo" required>
+
+                        <button type="submit">Registrarse</button>
+                       <p class="login-link">¿Ya tienes cuenta? <a href="index.html">Inicia sesión aquí</a></p>
+                </form>
+                    </form>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© POLINGRESO™ 2025</p>
+    </footer>
+</body>
+</html>
+<script>
+document.getElementById('registro-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const nombre = document.getElementById('nombre').value.trim();
+    const correo = document.getElementById('correo').value.trim();
+
+    try {
+        const respuesta = await fetch('http://localhost:3000/registrar', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ nombre, correo })
+        });
+
+        const resultado = await respuesta.text();
+        console.log('Respuesta del servidor:', resultado);
+
+        if (resultado === 'Registro exitoso') {
+            window.location.href = 'index.html';
+        } else {
+            alert(resultado); 
+        }
+    } catch (error) {
+        console.error('Error al registrar:', error);
+        alert('Ocurrió un error al registrar. Inténtalo de nuevo.');
+    }
+});
+</script>

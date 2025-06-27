@@ -1,0 +1,108 @@
+    .login-box button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background-color: #79032a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.login-box button:hover {
+    background-color: #5c0120;
+}
+
+.login-link {
+    margin-top: 15px;
+    font-size: 0.9em;
+    text-align: center;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #f3ebeb;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #79032a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2em;
+}
+
+header p {
+    font-weight: bold;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+section {
+    padding: 40px;
+    background-color: #f3ebeb;
+}
+
+.login-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #000;
+}
+
+.login-box label {
+    display: block;
+    margin-top: 10px;
+    font-weight: normal;
+    color: #000;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #f3ebeb;
+    border-radius: 4px;
+}
+
+.login-box a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #79032a;
+    text-decoration: underline;
+    font-size: 0.9em;
+}
+
+footer {
+    background-color: #79032a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
