@@ -38,32 +38,32 @@
 </body>
 </html>
 <script>
-document.getElementById('registro-form').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const nombre = document.getElementById('nombre').value.trim();
-    const correo = document.getElementById('correo').value.trim();
+    document.getElementById('registro-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const nombre = document.getElementById('nombre').value.trim();
+        const correo = document.getElementById('correo').value.trim();
 
-    try {
-        const respuesta = await fetch('/.netlify/functions/registrar', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ nombre, correo })
-        });
+        try {
+            const respuesta = await fetch('/.netlify/functions/registrar', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ nombre, correo })
+            });
 
-        const resultado = await respuesta.text();
-        console.log('Respuesta del servidor:', resultado);
+            const resultado = await respuesta.text();
+            console.log('Respuesta del servidor:', resultado);
 
-        if (resultado === 'Registro exitoso') {
-            window.location.href = 'index.html';
-        } else {
-            alert(resultado); 
+            if (resultado === 'Registro exitoso') {
+                window.location.href = 'index.html';
+            } else {
+                alert(resultado); 
+            }
+        } catch (error) {
+            console.error('Error al registrar:', error);
+            alert('Ocurrió un error al registrar. Inténtalo de nuevo.');
         }
-    } catch (error) {
-        console.error('Error al registrar:', error);
-        alert('Ocurrió un error al registrar. Inténtalo de nuevo.');
-    }
-});
+    });
 </script>
 
