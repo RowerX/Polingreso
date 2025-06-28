@@ -9,14 +9,14 @@
 <body>
     <header>
         <div style="display: flex; justify-content: space-between; align-items: center;">
-            <img src="edupolitech.png" alt="Logo IPN" style="height: 80px;">
+            <img src="logo_izquierdo.png" alt="Logo IPN" style="height: 60px;">
             <div>
                 <h1>POLINGRESO</h1>
                 <p>ENCUENTRA TU ESCUELA, ENCUENTRA TU FUTURO</p>
             </div>
-            <img src="polingreso.jpg" alt="Logo Politécnico" style="height: 80px;">
+            <img src="logo_derecho.png" alt="Logo Politécnico" style="height: 60px;">
         </div>
-        <nav style="margin-top: 20px;">
+        <nav>
             <button onclick="location.href='vocacional.html'">CONOCE VOCACIONAL</button>
             <button onclick="location.href='ingreso.html'">PROCESO DE INGRESO</button>
             <button onclick="location.href='estudio.html'">ESTUDIO PROACTIVO</button>
@@ -25,22 +25,38 @@
     </header>
 
     <main>
-        <section style="text-align: left;">
+        <section class="login-box" style="text-align: left; max-width: 600px;">
             <h2>¡Bienvenido a Polingreso!</h2>
-            <p>
-                Aquí encontrarás la información importante y confiable de cada vocacional, carreras técnicas, planes de estudio, requisitos, aciertos necesarios y nuestro actualizado material de estudio.
-            </p>
-            <p>
-                El primer paso para ser un Politécnico es prepararte con las herramientas correctas, esta es una de ellas.
-            </p>
-            <p>
-                Consulta todas nuestras herramientas en la barra del menú superior.
-            </p>
+            <p>Aquí encontrarás la información importante y confiable de cada vocacional, carreras técnicas, planes de estudio, requisitos, aciertos necesarios y nuestro actualizado material de estudio.</p>
+            <p>El primer paso para ser un Politécnico es prepararte con las herramientas correctas, esta es una de ellas.</p>
+            <p>Consulta todas nuestras herramientas en la barra del menú superior.</p>
         </section>
     </main>
+
+    <aside class="sidebar">
+        <div>
+            <h3>Opciones rápidas</h3>
+            <ul>
+                <li><a href="#">Nuevo contenido de estudio 2025</a></li>
+                <li><a href="#">Tips para tu examen</a></li>
+                <li><a href="#">Estudio activo</a></li>
+                <li><a href="#">Guías y recursos</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="socials">
+                <strong>Síguenos:</strong><br>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">YouTube</a>
+            </div>
+            <button onclick="alert('Sesión cerrada')">Cerrar sesión</button>
+        </div>
+    </aside>
 
     <footer>
         &copy; POLINGRESO™ 2025
     </footer>
 </body>
 </html>
+
