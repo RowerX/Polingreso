@@ -271,14 +271,6 @@ nav button:hover {
             box-shadow: 0 0 5px rgba(0,0,0,0.1);
         }
 
-        footer {
-            background-color: #79032a;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 40px;
-        }
-
         .logout {
             text-align: right;
             margin: 10px 20px;
