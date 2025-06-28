@@ -49,7 +49,7 @@
                     <a href="#">Instagram</a>
                     <a href="#">YouTube</a>
                 </div>
-                <button onclick="alert('Sesión cerrada')">Cerrar sesión</button>
+                  <button onclick="cerrarSesion()">Cerrar sesión</button>
             </div>
         </aside>
     </div>
@@ -57,5 +57,11 @@
     <footer>
         &copy; POLINGRESO™ 2025
     </footer>
+<script>
+    function cerrarSesion() {
+        alert("Sesión cerrada correctamente");
+        window.location.href = "index.html";
+    }
+</script>
 </body>
 </html>
