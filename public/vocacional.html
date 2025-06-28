@@ -6,9 +6,21 @@
     <title>Conoce Vocacional</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header>
-        <h1 style="text-align:center; background-color:#79032a; color:white; padding:20px;">Subida de Material</h1>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+        <header>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <img src="img/edupolitech.png" alt="Logo IPN" style="height: 60px;">
+            <div>
+                <h1 style="text-align:center; background-color:#79032a; color:white; padding:20px;">Subida de Material</h1>
+            </div>
+            <img src="img/polingreso.jpg" alt="Logo Politécnico" style="height: 60px;">
+        </div>
+        <nav>
+            <button onclick="location.href='vocacional.html'">CONOCE VOCACIONAL</button>
+            <button onclick="location.href='ingreso.html'">PROCESO DE INGRESO</button>
+            <button onclick="location.href='estudio.html'">ESTUDIO PROACTIVO</button>
+            <button onclick="location.href='simulacro.html'">EXAMEN SIMULACRO</button>
+        </nav>
     </header>
 
     <div class="container">
@@ -16,7 +28,7 @@
             <input type="text" id="buscador" placeholder="Buscar vocacional o carrera..." style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc;">
             <h2>Vocacionales</h2>
             <div class="item">
-                <img src="voca1.jpg" alt="Voca 1">
+                <img src="img/cecyt1.jpeg" alt="Voca 1">
                 <div class="info">
                     <h4>CECyT No.1 Gonzalo Vázquez Vela</h4>
 <p>Ofrece carreras técnicas como Computación, Electrónica, Mecatrónica, y más. Ubicado en el Casco de Santo Tomás, es una de las vocacionales más antiguas del IPN.</p>
@@ -24,7 +36,7 @@
                 <button class="btn-visitar" onclick="mostrarInfo('voca1')">Visitar</button>
             </div>
             <div class="item">
-                <img src="voca2.jpg" alt="Voca 2">
+                <img src="img/cecyt2.jpg" alt="Voca 2">
                 <div class="info">
                     <h4>CECyT No. 2 Miguel Bernard</h4>
 <p>Cuenta con especialidades como Diseño Gráfico, Programación, y Soporte Técnico. Está ubicada al norte de la CDMX, con enfoque en tecnología y diseño.</p>
@@ -32,7 +44,7 @@
                 <button class="btn-visitar" onclick="mostrarInfo('voca2')">Visitar</button>
             </div>
             <div class="item">
-                <img src="voca3.jpg" alt="Voca 3">
+                <img src="img/cecyt3.png" alt="Voca 3">
                 <div class="info">
                     <h4>CECyT No. 3 Estanislao Ramírez Ruiz</h4>
 <p>Ofrece carreras como Construcción, Topografía, y Desarrollo de Software. Localizada en Ecatepec, Estado de México.</p>
@@ -40,7 +52,7 @@
                 <button class="btn-visitar" onclick="mostrarInfo('voca3')">Visitar</button>
             </div>
             <div class="item">
-                <img src="voca4.jpg" alt="Voca 4">
+                <img src="img/cecyt4.jpg" alt="Voca 4">
                 <div class="info">
                     <h4>CECyT No. 4 Lázaro Cárdenas</h4>
 <p>Imparte especialidades como Química Industrial, Laboratorista Químico y más. Ubicada en la alcaldía Venustiano Carranza.</p>
@@ -48,7 +60,7 @@
                 <button class="btn-visitar" onclick="mostrarInfo('voca4')">Visitar</button>
             </div>
             <div class="item">
-                <img src="voca5.jpg" alt="Voca 5">
+                <img src="img/cecyt5.jpg" alt="Voca 5">
                 <div class="info">
                     <h4>CECyT No. 5 Benito Juárez</h4>
 <p>Destaca por sus carreras de Administración de Recursos Humanos, Contabilidad, y Mercadotecnia. Se encuentra en la zona centro de la ciudad.</p>
@@ -56,7 +68,7 @@
                 <button class="btn-visitar" onclick="mostrarInfo('voca5')">Visitar</button>
             </div>
             <div class="item">
-                <img src="voca6.jpg" alt="Voca 6">
+                <img src="img/cecyt6.jpg" alt="Voca 6">
                 <div class="info">
                     <h4>CECyT No. 6 Miguel Othón de Mendizábal</h4>
 <p>Especializado en carreras como Aeronáutica, Energías Renovables y Sistemas Automotrices. Situado en la alcaldía Gustavo A. Madero.</p>
@@ -64,7 +76,7 @@
                 <button class="btn-visitar" onclick="mostrarInfo('voca6')">Visitar</button>
             </div>
             <div class="item">
-                <img src="voca7.jpg" alt="Voca 7">
+                <img src="img/cecyt7.jpg" alt="Voca 7">
                 <div class="info">
                     <h4>CECyT No. 7 Cuauhtémoc</h4>
 <p>Ofrece estudios en áreas como Mantenimiento Industrial, Electricidad y Automatización. Se ubica al oriente de la ciudad.</p>
@@ -72,7 +84,7 @@
                 <button class="btn-visitar" onclick="mostrarInfo('voca7')">Visitar</button>
             </div>
             <div class="item">
-                <img src="voca8.jpg" alt="Voca 8">
+                <img src="img/cecyt8.jpg" alt="Voca 8">
                 <div class="info">
                     <h4>CECyT No. 8 Narciso Bassols</h4>
 <p>Destaca por carreras como Programación, Administración y Contabilidad. Ubicado en la alcaldía Iztacalco.</p>
@@ -80,7 +92,7 @@
                 <button class="btn-visitar" onclick="mostrarInfo('voca8')">Visitar</button>
             </div>
             <div class="item">
-                <img src="voca9.jpg" alt="Voca 9">
+                <img src="img/cecyt9.jpg" alt="Voca 9">
                 <div class="info">
                     <h4>CECyT No. 9 Juan de Dios Bátiz</h4>
 <p>Una de las vocacionales más reconocidas, con programas en Informática, Mecatrónica, y Telecomunicaciones. Está en la zona norte de la ciudad.</p>
@@ -88,7 +100,7 @@
                 <button class="btn-visitar" onclick="mostrarInfo('voca9')">Visitar</button>
             </div>
             <div class="item">
-                <img src="voca10.jpg" alt="Voca 10">
+                <img src="img/cecyt10.jpg" alt="Voca 10">
                 <div class="info">
                     <h4>CECyT No. 10 Carlos Vallejo Márquez</h4>
 <p>Ofrece especialidades en Construcción, Dibujo Arquitectónico y Diseño Industrial. Localizada en la alcaldía Miguel Hidalgo.</p>
@@ -96,7 +108,7 @@
                 <button class="btn-visitar" onclick="mostrarInfo('voca10')">Visitar</button>
             </div>
             <div class="item">
-                <img src="voca11.jpg" alt="Voca 11">
+                <img src="img/cecyt11.jpg" alt="Voca 11">
                 <div class="info">
                     <h4>CECyT No. 11 Wilfrido Massieu</h4>
 <p>Se enfoca en carreras de Electrónica, Sistemas Digitales, e Informática. Con excelente infraestructura en Zacatenco.</p>
@@ -104,7 +116,7 @@
                 <button class="btn-visitar" onclick="mostrarInfo('voca11')">Visitar</button>
             </div>
             <div class="item">
-                <img src="voca12.jpg" alt="Voca 12">
+                <img src="img/cecyt12.jpg" alt="Voca 12">
                 <div class="info">
                     <h4>CECyT No. 12 José María Morelos</h4>
 <p>Ubicada en la zona oriente, ofrece carreras en Sistemas Automotrices, Soldadura y Plásticos.</p>
@@ -112,7 +124,7 @@
                 <button class="btn-visitar" onclick="mostrarInfo('voca12')">Visitar</button>
             </div>
             <div class="item">
-                <img src="voca13.jpg" alt="Voca 13">
+                <img src="img/cecyt13.jpg" alt="Voca 13">
                 <div class="info">
                     <h4>CECyT No. 13 Ricardo Flores Magón</h4>
 <p>Imparte programas como Electricidad, Electrónica, y Máquinas-Herramienta. Localizado en Nezahualcóyotl.</p>
@@ -120,7 +132,7 @@
                 <button class="btn-visitar" onclick="mostrarInfo('voca13')">Visitar</button>
             </div>
             <div class="item">
-                <img src="voca14.jpg" alt="Voca 14">
+                <img src="img/cecyt14.jpg" alt="Voca 14">
                 <div class="info">
                     <h4>CECyT No. 14 Luis Enrique Erro</h4>
 <p>Brinda formación en áreas como Biotecnología, Química y Medio Ambiente. Está en Tlalnepantla, Edo. de México.</p>
@@ -128,15 +140,13 @@
                 <button class="btn-visitar" onclick="mostrarInfo('voca14')">Visitar</button>
             </div>
             <div class="item">
-                <img src="voca15.jpg" alt="Voca 15">
+                <img src="img/cecyt15.jpg" alt="Voca 15">
                 <div class="info">
                     <h4>CECyT No. 15 Diodoro Antúnez Echegaray</h4>
 <p>Con especialidades en Electrónica, Sistemas Digitales y Diseño. Se ubica en la zona sur de la ciudad.</p>
                 </div>
                 <button class="btn-visitar" onclick="mostrarInfo('voca15')">Visitar</button>
             </div>
-            <!-- Puedes duplicar este bloque para más vocacionales -->
-            <!-- Puedes duplicar este bloque para más vocacionales -->
         </div>
 
         <div class="recomendaciones">
@@ -149,7 +159,7 @@
         <a href="index.html">Cerrar Sesión</a>
     </div>
 
-    <footer>
+    <footer style="margin-top: auto;">
         &copy; 2025 - POLINGRESO™
     </footer>
 <script>
