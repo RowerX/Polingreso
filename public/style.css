@@ -292,3 +292,27 @@ nav button:hover {
         .logout a:hover {
             text-decoration: underline;
         }
+
+        .ingreso{
+            flex: 1;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #79032a;
+            margin-bottom: 20px;
+        }
+
+        ol {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
