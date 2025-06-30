@@ -19,24 +19,25 @@ exports.handler = async (event) => {
     );
 
     if (existente.length > 0) {
-      await db.disconnect(connection);
-      return {
-        statusCode: 409,
-        body: JSON.stringify({'Correo ya registrado' }),
-      };
-    }
+  await db.disconnect(connection);
+  return {
+    statusCode: 409,
+    body: 'Correo ya registrado'
+  };
+}
 
-    await connection.execute(
-      'INSERT INTO usuarios (nombre, correo) VALUES (?, ?)',
-      [nombre.trim(), correo.trim().toLowerCase()]
-    );
+await connection.execute(
+  'INSERT INTO usuarios (nombre, correo) VALUES (?, ?)',
+  [nombre.trim(), correo.trim().toLowerCase()]
+);
 
-    await db.disconnect(connection);
+await db.disconnect(connection);
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ status: 'success', message: 'Registro exitoso' }),
-    };
+return {
+  statusCode: 200,
+  body: 'Registro exitoso'
+};
+
 
   } catch (err) {
     return {
