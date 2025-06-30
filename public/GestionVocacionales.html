@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestión de Vocacionales</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <img src="img/edupolitech.png" alt="Logo Edupolitech" style="height: 60px;">
+      <div>
+        <h1>POLINGRESO</h1>
+        <p>ENCUENTRA TU ESCUELA, ENCUENTRA TU FUTURO</p>
+      </div>
+      <img src="img/polingreso.jpg" alt="Logo IPN" style="height: 60px;">
+    </div>
+  </header>
+
+  <main>
+    <section class="ingreso">
+      <h2>Gestión de Vocacionales</h2>
+      <p>Aquí el administrador puede agregar, visualizar y eliminar la información de las vocacionales que se muestran a los estudiantes.</p>
+      <br>
+
+      <div class="formulario">
+        <label>Nombre:</label>
+        <input type="text" id="nombre" />
+
+       <br><br> <label>Ubicación:</label>
+        <input type="text" id="ubicacion" />
+
+        <br><br><label>Carreras:</label>
+        <textarea id="carreras"></textarea>
+
+        <br><br><label>Área académica:</label>
+        <input type="text" id="area" />
+
+        <br><br><label>URL oficial:</label>
+        <input type="url" id="url" />
+
+        <br><br><button onclick="guardarVocacional()">Guardar Vocacional</button>
+      </div>
+
+      <div class="lista">
+        <h3>Vocacionales registradas</h3>
+        <div id="listaVocacionales"></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="sidebar-container">
+    <aside class="sidebar">
+      <div>
+        <h3>Opciones rápidas</h3>
+        <ul>
+          <li><a href="BienvenidaGestor.html">Inicio del Gestor</a></li>
+          <li><a href="GestionMaterialDidactico.html">Gestión de Material Didáctico</a></li>
+          <li><a href="GestionExamenSimulacro.html">Gestión de Preguntas de Examen Simulacro</a></li>
+        </ul>
+      </div>
+      <div><button onclick="cerrarSesion()">Salir</button></div>
+    </aside>
+  </div>
+
+  <footer>
+    &copy; POLINGRESO™ 2025
+  </footer>
+
+  <script>
+    const lista = document.getElementById("listaVocacionales");
+    let vocacionales = [];
+
+    function guardarVocacional() {
+      const nombre = document.getElementById("nombre").value;
+      const ubicacion = document.getElementById("ubicacion").value;
+      const carreras = document.getElementById("carreras").value;
+      const area = document.getElementById("area").value;
+      const url = document.getElementById("url").value;
+
+      if (nombre && ubicacion && carreras && area && url) {
+        vocacionales.push({ nombre, ubicacion, carreras, area, url });
+        mostrarVocacionales();
+        limpiarFormulario();
+      } else {
+        alert("Por favor, completa todos los campos.");
+      }
+    }
+
+    function mostrarVocacionales() {
+      lista.innerHTML = "";
+      vocacionales.forEach((v, i) => {
+        lista.innerHTML += `
+          <div style="background: #f9f9f9; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 6px;">
+            <strong>${v.nombre}</strong><br>
+            <em>${v.ubicacion}</em><br>
+            <p>${v.carreras}</p>
+            <p><strong>Área:</strong> ${v.area}</p>
+            <a href="${v.url}" target="_blank">Visitar sitio</a><br>
+            <button onclick="eliminarVocacional(${i})">Eliminar</button>
+          </div>
+        `;
+      });
+    }
+
+    function eliminarVocacional(index) {
+      vocacionales.splice(index, 1);
+      mostrarVocacionales();
+    }
+
+    function limpiarFormulario() {
+      document.getElementById("nombre").value = "";
+      document.getElementById("ubicacion").value = "";
+      document.getElementById("carreras").value = "";
+      document.getElementById("area").value = "";
+      document.getElementById("url").value = "";
+    }
+
+    function cerrarSesion() {
+      alert("Sesión cerrada correctamente");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
