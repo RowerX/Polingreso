@@ -22,7 +22,7 @@ exports.handler = async (event) => {
       await db.disconnect(connection);
       return {
         statusCode: 409,
-        body: JSON.stringify({ message: 'Correo ya registrado' }),
+        body: JSON.stringify({'Correo ya registrado' }),
       };
     }
 
