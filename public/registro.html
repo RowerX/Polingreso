@@ -63,7 +63,7 @@
             if (respuesta.ok && texto === 'Registro exitoso') {
     mensajeElem.textContent = 'Registrado correctamente. Redirigiendo...';
     setTimeout(() => {
-        window.location.href = 'login.html'; // Redirige al inicio de sesión
+        window.location.href = 'login.html'; 
     }, 3000);
 } else {
     alert(texto);
