@@ -61,13 +61,14 @@
             const texto = await respuesta.text();
 
             if (respuesta.ok && texto === 'Registro exitoso') {
-                mensajeElem.textContent = 'Registrado correctamente. Redirigiendo...';
-                setTimeout(() => {
-                    window.location.href = 'bienvenido.html';
-                }, 3000);
-            } else {
-                alert(texto);
-            }
+    mensajeElem.textContent = 'Registrado correctamente. Redirigiendo...';
+    setTimeout(() => {
+        window.location.href = 'login.html'; // Redirige al inicio de sesión
+    }, 3000);
+} else {
+    alert(texto);
+}
+
         } catch (error) {
             console.error('Error al registrar:', error);
             alert('Error al registrar. Intenta de nuevo.');
