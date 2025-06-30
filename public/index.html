@@ -1,46 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polingreso - Iniciar Sesión</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <img src="img/edupolitech.png" alt="Logo IPN" style="height: 80px;">
-            <div>
-                <h1>POLINGRESO</h1>
-                <p>ENCUENTRA TU ESCUELA, ENCUENTRA TU FUTURO</p>
-            </div>
-            <img src="img/polingreso.jpg" alt="Logo Politécnico" style="height: 80px;">
-        </div>
-    </header>
-    <main>
-        <section>
-            <div class="login-box">
-                <h2>Iniciar Sesión</h2>
-                <form id="login-form">
-                    <label for="usuario">Usuario</label>
-                    <input type="text" id="usuario" name="usuario" required>
-
-                    <label for="correo">Correo</label>
-                    <input type="text" id="correo" name="correo" required>
-
-                    <button type="submit">Iniciar Sesión</button>
-                    <a href="registro.html">Regístrate aquí</a>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>© POLINGRESO™ 2025</p>
-    </footer>
-
-   <script>
-    document.getElementById('login-form').addEventListener('submit', async (e) => {
+<script>
+document.getElementById('login-form').addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const nombre = document.getElementById('usuario').value.trim();
@@ -48,6 +7,12 @@
 
     if (!nombre || !correo) {
         alert('Por favor, completa todos los campos');
+        return;
+    }
+
+    // Verificación especial para el Gestor
+    if (nombre.toLowerCase() === 'edupolitech' && correo.toLowerCase() === 'poli.ingreso.ipn.nms@gmail.com') {
+        window.location.href = 'BienvenidaGestor.html';
         return;
     }
 
@@ -80,8 +45,4 @@
         alert('No se pudo conectar con el servidor');
     }
 });
-
 </script>
-
-</body>
-</html>

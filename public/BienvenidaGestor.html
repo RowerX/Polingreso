@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polingreso - Bienvenida Gestor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <img src="img/edupolitech.png" alt="Logo Edupolitech" style="height: 60px;">
+      <div>
+        <h1>POLINGRESO</h1>
+        <p>ENCUENTRA TU ESCUELA, ENCUENTRA TU FUTURO</p>
+      </div>
+      <img src="img/polingreso.jpg" alt="Logo IPN" style="height: 60px;">
+    </div>
+  </header>
+
+  <main>
+    <section class="ingreso">
+      <h2>Bienvenido Gestor!!</h2>
+      <p>
+        Aquí actualizarás la información importante y confiable de cada vocacional, carreras técnicas, planes de estudio, requisitos, aciertos necesarios y nuestro material de estudio actualizándolo frecuentemente.
+      </p>
+    </section>
+  </main><br><br>
+
+  <div class="sidebar-container">
+    <aside class="sidebar">
+      <div>
+        <h3>Opciones rápidas</h3>
+        <ul>
+          <li><a href="GestionExamenSimulacro.html">Gestión de Preguntas de Examen Simulacro</a></li>
+          <li><a href="GestionMaterialDidactico.html">Gestión de Material Didáctico</a></li>
+        </ul>
+      </div>
+      <div><button onclick="cerrarSesion()">Salir</button></div>
+    </aside>
+  </div>
+
+  <footer>
+    &copy; POLINGRESO™ 2025
+  </footer>
+
+  <script>
+    function cerrarSesion() {
+      alert("Sesión cerrada correctamente");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

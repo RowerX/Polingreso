@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Examen Simulacro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <img src="img/edupolitech.png" alt="Logo Edupolitech" style="height: 60px;">
+      <div><h1>POLINGRESO</h1><p>ENCUENTRA TU ESCUELA, ENCUENTRA TU FUTURO</p></div>
+      <img src="img/polingreso.jpg" alt="Logo IPN" style="height: 60px;">
+    </div>
+    <nav>
+            <button onclick="location.href='vocacional.html'">CONOCE VOCACIONAL</button>
+            <button onclick="location.href='ingreso.html'">PROCESO DE INGRESO</button>
+            <button onclick="location.href='estudio.html'">ESTUDIO PROACTIVO</button>
+            <button onclick="location.href='simulacro.html'">EXAMEN SIMULACRO</button>
+        </nav>
+  </header>
+
+  <main>
+    <section class="ingreso">
+      <h2>Examen Simulacro</h2>
+      <p>Haz click en el siguiente botón para acceder a nuestro simulacro de examen en nivel medio superior:</p>
+      <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfSimuladoLink/formResponse','_blank')"
+              style="margin-top:15px; padding:10px 20px; background-color:#79032a; color:white; border:none; border-radius:4px; cursor:pointer;">
+        Iniciar Simulacro
+      </button>
+    </section>
+  </main>
+
+  <div class="sidebar-container">
+    <aside class="sidebar">
+      <div>
+        <h3>Opciones rápidas</h3>
+        <ul>
+          <li><a href="bienvenido.html">Inicio</a></li>
+          <li><a href="vocacional.html">Vocacionales</a></li>
+          <li><a href="ingreso.html">Ingreso</a></li>
+          <li><a href="estudio.html">Estudio</a></li>
+        </ul>
+      </div>
+      <div><button onclick="cerrarSesion()">Salir</button></div>
+    </aside>
+  </div>
+
+  <footer>&copy; POLINGRESO™ 2025</footer>
+
+  <script>
+    function cerrarSesion() {
+      alert("Sesión cerrada correctamente");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
