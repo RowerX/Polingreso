@@ -1,34 +1,561 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Examen Simulacro</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <div style="display: flex; justify-content: space-between; align-items: center;">
       <img src="img/edupolitech.png" alt="Logo Edupolitech" style="height: 60px;">
-      <div><h1>POLINGRESO</h1><p>ENCUENTRA TU ESCUELA, ENCUENTRA TU FUTURO</p></div>
+      <div>
+        <h1>POLINGRESO</h1>
+        <p>ENCUENTRA TU ESCUELA, ENCUENTRA TU FUTURO</p>
+      </div>
       <img src="img/polingreso.jpg" alt="Logo IPN" style="height: 60px;">
     </div>
     <nav>
-            <button onclick="location.href='vocacional.html'">CONOCE VOCACIONAL</button>
-            <button onclick="location.href='ingreso.html'">PROCESO DE INGRESO</button>
-            <button onclick="location.href='estudio.html'">ESTUDIO PROACTIVO</button>
-            <button onclick="location.href='simulacro.html'">EXAMEN SIMULACRO</button>
-        </nav>
+      <button onclick="location.href='vocacional.html'">CONOCE VOCACIONAL</button>
+      <button onclick="location.href='ingreso.html'">PROCESO DE INGRESO</button>
+      <button onclick="location.href='estudio.html'">ESTUDIO PROACTIVO</button>
+      <button onclick="location.href='simulacro.html'">EXAMEN SIMULACRO</button>
+    </nav>
   </header>
 
-  <main>
-    <section class="ingreso">
+  <main class="container">
+    <section class="vocacionales">
+      <button id="iniciarBtn" style="padding: 10px 20px; background-color: #79032a; color: white; border: none; border-radius: 5px; cursor: pointer; margin-bottom: 20px;">
+    Iniciar examen
+  </button>
       <h2>Examen Simulacro</h2>
-      <p>Haz click en el siguiente botón para acceder a nuestro simulacro de examen en nivel medio superior:</p>
-      <button onclick="window.open('https://app.dems.ipn.mx/simulador-nms/')""
-              style="margin-top:15px; padding:10px 20px; background-color:#79032a; color:white; border:none; border-radius:4px; cursor:pointer;">
-        Iniciar Simulacro
-      </button>
+      <form id="formulario">
+        <section class="materias" data-seccion="matematicas">
+  <h3>Matemáticas</h3>
+  <ol>
+    <li>
+      <p>¿Cuál es el término que falta en la siguiente sucesión? 10, -2, -14, -26, __</p>
+      <label><input type="radio" name="mat1" value="correcto"> A) -38</label><br>
+      <label><input type="radio" name="mat1" value="B"> B) 14</label><br>
+      <label><input type="radio" name="mat1" value="C"> C) -50</label><br>
+      <label><input type="radio" name="mat1" value="D"> D) -37</label>
+    </li>
+    <li>
+      <p>Indica los números que continúan en la sucesión: 8, 7.1, 6.02, 5.003, 4.0004, __, __</p>
+      <label><input type="radio" name="mat2" value="correcto"> A) 3.00005 y 2.000006</label><br>
+      <label><input type="radio" name="mat2" value="B"> B) 3.0005 y 2.00006</label><br>
+      <label><input type="radio" name="mat2" value="C"> C) 3.000005 y 2.000006</label><br>
+      <label><input type="radio" name="mat2" value="D"> D) 3.000005 y 2.00006</label>
+    </li>
+    <li>
+      <p>Identifica el número que complete la sucesión: 5, 1, 4, 7, 2, 6, 10, 3, __</p>
+      <label><input type="radio" name="mat3" value="A"> A) 4</label><br>
+      <label><input type="radio" name="mat3" value="correcto"> B) 6</label><br>
+      <label><input type="radio" name="mat3" value="C"> C) 7</label><br>
+      <label><input type="radio" name="mat3" value="D"> D) 8</label>
+    </li>
+    <li>
+      <p>¿Cuál es el resultado de la operación: 7 × (6 + 2) - 3²?</p>
+      <label><input type="radio" name="mat4" value="A"> A) 47</label><br>
+      <label><input type="radio" name="mat4" value="B"> B) 49</label><br>
+      <label><input type="radio" name="mat4" value="correcto"> C) 53</label><br>
+      <label><input type="radio" name="mat4" value="D"> D) 55</label>
+    </li>
+    <li>
+      <p>¿Cuál es el área de un triángulo con base 8 y altura 5?</p>
+      <label><input type="radio" name="mat5" value="correcto"> A) 20</label><br>
+      <label><input type="radio" name="mat5" value="B"> B) 40</label><br>
+      <label><input type="radio" name="mat5" value="C"> C) 13</label><br>
+      <label><input type="radio" name="mat5" value="D"> D) 30</label>
+    </li>
+    <li>
+      <p>Resuelve: 12 ÷ 3 + 4 × 2</p>
+      <label><input type="radio" name="mat6" value="correcto"> A) 14</label><br>
+      <label><input type="radio" name="mat6" value="B"> B) 20</label><br>
+      <label><input type="radio" name="mat6" value="C"> C) 10</label><br>
+      <label><input type="radio" name="mat6" value="D"> D) 18</label>
+    </li>
+    <li>
+      <p>¿Cuál es el resultado de (3²)³?</p>
+      <label><input type="radio" name="mat7" value="A"> A) 27</label><br>
+      <label><input type="radio" name="mat7" value="B"> B) 81</label><br>
+      <label><input type="radio" name="mat7" value="correcto"> C) 729</label><br>
+      <label><input type="radio" name="mat7" value="D"> D) 243</label>
+    </li>
+    <li>
+      <p>¿Cuál es la pendiente de la recta que pasa por los puntos (2,3) y (4,7)?</p>
+      <label><input type="radio" name="mat8" value="A"> A) 1</label><br>
+      <label><input type="radio" name="mat8" value="correcto"> B) 2</label><br>
+      <label><input type="radio" name="mat8" value="C"> C) 3</label><br>
+      <label><input type="radio" name="mat8" value="D"> D) 4</label>
+    </li>
+  </ol>
+</section>
+  <section class="materias" data-seccion="espanol">
+  <h3>Español</h3>
+  <ol start="9">
+    <li>
+      <p>¿Cuál es el sinónimo de “feliz”?</p>
+      <label><input type="radio" name="esp1" value="A"> A) Triste</label><br>
+      <label><input type="radio" name="esp1" value="correcto"> B) Contento</label><br>
+      <label><input type="radio" name="esp1" value="C"> C) Enojado</label><br>
+      <label><input type="radio" name="esp1" value="D"> D) Aburrido</label>
+    </li>
+    <li>
+      <p>¿Cuál es el antónimo de “grande”?</p>
+      <label><input type="radio" name="esp2" value="correcto"> A) Pequeño</label><br>
+      <label><input type="radio" name="esp2" value="B"> B) Alto</label><br>
+      <label><input type="radio" name="esp2" value="C"> C) Ancho</label><br>
+      <label><input type="radio" name="esp2" value="D"> D) Largo</label>
+    </li>
+    <li>
+      <p>Identifica la función de la palabra en la oración: “María corre rápido”.</p>
+      <label><input type="radio" name="esp3" value="A"> A) Sujeto</label><br>
+      <label><input type="radio" name="esp3" value="correcto"> B) Verbo</label><br>
+      <label><input type="radio" name="esp3" value="C"> C) Adverbio</label><br>
+      <label><input type="radio" name="esp3" value="D"> D) Adjetivo</label>
+    </li>
+    <li>
+      <p>¿Cuál es la forma correcta del plural de “luz”?</p>
+      <label><input type="radio" name="esp4" value="A"> A) Luzes</label><br>
+      <label><input type="radio" name="esp4" value="B"> B) Luzes</label><br>
+      <label><input type="radio" name="esp4" value="correcto"> C) Luces</label><br>
+      <label><input type="radio" name="esp4" value="D"> D) Luzs</label>
+    </li>
+    <li>
+      <p>Selecciona la oración correcta:</p>
+      <label><input type="radio" name="esp5" value="A"> A) El niño comieron</label><br>
+      <label><input type="radio" name="esp5" value="correcto"> B) Los niños comieron</label><br>
+      <label><input type="radio" name="esp5" value="C"> C) Los niño comieron</label><br>
+      <label><input type="radio" name="esp5" value="D"> D) El niños comieron</label>
+    </li>
+    <li>
+      <p>¿Cuál es el tiempo verbal en la oración: “Estudiaré para el examen”?</p>
+      <label><input type="radio" name="esp6" value="A"> A) Presente</label><br>
+      <label><input type="radio" name="esp6" value="B"> B) Pasado</label><br>
+      <label><input type="radio" name="esp6" value="correcto"> C) Futuro</label><br>
+      <label><input type="radio" name="esp6" value="D"> D) Condicional</label>
+    </li>
+    <li>
+      <p>Identifica el tipo de palabra: “rápido” en la oración “María corre rápido”.</p>
+      <label><input type="radio" name="esp7" value="A"> A) Adjetivo</label><br>
+      <label><input type="radio" name="esp7" value="B"> B) Verbo</label><br>
+      <label><input type="radio" name="esp7" value="correcto"> C) Adverbio</label><br>
+      <label><input type="radio" name="esp7" value="D"> D) Sustantivo</label>
+    </li>
+    <li>
+      <p>¿Cuál es el sujeto en la oración: “El perro ladra fuerte”?</p>
+      <label><input type="radio" name="esp8" value="correcto"> A) El perro</label><br>
+      <label><input type="radio" name="esp8" value="B"> B) Ladra</label><br>
+      <label><input type="radio" name="esp8" value="C"> C) Fuerte</label><br>
+      <label><input type="radio" name="esp8" value="D"> D) Ninguno</label>
+    </li>
+    <li>
+      <p>Selecciona el pronombre correcto para la oración: “___ está feliz”.</p>
+      <label><input type="radio" name="esp9" value="correcto"> A) Él</label><br>
+      <label><input type="radio" name="esp9" value="B"> B) Ellos</label><br>
+      <label><input type="radio" name="esp9" value="C"> C) Nos</label><br>
+      <label><input type="radio" name="esp9" value="D"> D) Tú</label>
+    </li>
+    <li>
+      <p>¿Cuál es el uso correcto de “porque”?</p>
+      <label><input type="radio" name="esp10" value="correcto"> A) Para responder una causa</label><br>
+      <label><input type="radio" name="esp10" value="B"> B) Para hacer preguntas</label><br>
+      <label><input type="radio" name="esp10" value="C"> C) Para negar algo</label><br>
+      <label><input type="radio" name="esp10" value="D"> D) Ninguna</label>
+    </li>
+  </ol>
+</section>
+<section class="materias" data-seccion="quimica">
+  <h3>Química</h3>
+  <ol start="19">
+    <li>
+      <p>¿Cuál es la fórmula química del agua?</p>
+      <label><input type="radio" name="quim1" value="correcto"> A) H<sub>2</sub>O</label><br>
+      <label><input type="radio" name="quim1" value="B"> B) CO<sub>2</sub></label><br>
+      <label><input type="radio" name="quim1" value="C"> C) O<sub>2</sub></label><br>
+      <label><input type="radio" name="quim1" value="D"> D) NaCl</label>
+    </li>
+    <li>
+      <p>¿Qué tipo de enlace une a los átomos en una molécula de agua?</p>
+      <label><input type="radio" name="quim2" value="A"> A) Enlace iónico</label><br>
+      <label><input type="radio" name="quim2" value="correcto"> B) Enlace covalente</label><br>
+      <label><input type="radio" name="quim2" value="C"> C) Enlace metálico</label><br>
+      <label><input type="radio" name="quim2" value="D"> D) Fuerzas de Van der Waals</label>
+    </li>
+    <li>
+      <p>¿Cuál es el pH de una solución neutra?</p>
+      <label><input type="radio" name="quim3" value="A"> A) 0</label><br>
+      <label><input type="radio" name="quim3" value="B"> B) 7</label><br>
+      <label><input type="radio" name="quim3" value="correcto"> C) 7</label><br>
+      <label><input type="radio" name="quim3" value="D"> D) 14</label>
+    </li>
+    <li>
+      <p>¿Qué elemento tiene el símbolo químico “Na”?</p>
+      <label><input type="radio" name="quim4" value="correcto"> A) Sodio</label><br>
+      <label><input type="radio" name="quim4" value="B"> B) Nitrógeno</label><br>
+      <label><input type="radio" name="quim4" value="C"> C) Neón</label><br>
+      <label><input type="radio" name="quim4" value="D"> D) Níquel</label>
+    </li>
+    <li>
+      <p>¿Cuál es el producto de la combustión completa de un hidrocarburo?</p>
+      <label><input type="radio" name="quim5" value="A"> A) Monóxido de carbono y agua</label><br>
+      <label><input type="radio" name="quim5" value="correcto"> B) Dióxido de carbono y agua</label><br>
+      <label><input type="radio" name="quim5" value="C"> C) Dióxido de carbono y oxígeno</label><br>
+      <label><input type="radio" name="quim5" value="D"> D) Carbono y oxígeno</label>
+    </li>
+    <li>
+      <p>¿Qué nombre recibe el cambio de estado de sólido a gas sin pasar por el estado líquido?</p>
+      <label><input type="radio" name="quim6" value="A"> A) Condensación</label><br>
+      <label><input type="radio" name="quim6" value="B"> B) Fusión</label><br>
+      <label><input type="radio" name="quim6" value="correcto"> C) Sublimación</label><br>
+      <label><input type="radio" name="quim6" value="D"> D) Vaporización</label>
+    </li>
+    <li>
+      <p>¿Cuál es la unidad básica de un compuesto químico?</p>
+      <label><input type="radio" name="quim7" value="correcto"> A) Molécula</label><br>
+      <label><input type="radio" name="quim7" value="B"> B) Átomo</label><br>
+      <label><input type="radio" name="quim7" value="C"> C) Ión</label><br>
+      <label><input type="radio" name="quim7" value="D"> D) Elemento</label>
+    </li>
+    <li>
+      <p>¿Qué científico propuso la tabla periódica?</p>
+      <label><input type="radio" name="quim8" value="correcto"> A) Dmitri Mendeléyev</label><br>
+      <label><input type="radio" name="quim8" value="B"> B) Albert Einstein</label><br>
+      <label><input type="radio" name="quim8" value="C"> C) Isaac Newton</label><br>
+      <label><input type="radio" name="quim8" value="D"> D) Marie Curie</label>
+    </li>
+    <li>
+      <p>¿Qué partícula subatómica tiene carga negativa?</p>
+      <label><input type="radio" name="quim9" value="correcto"> A) Electrón</label><br>
+      <label><input type="radio" name="quim9" value="B"> B) Protón</label><br>
+      <label><input type="radio" name="quim9" value="C"> C) Neutrón</label><br>
+      <label><input type="radio" name="quim9" value="D"> D) Positrón</label>
+    </li>
+    <li>
+      <p>¿Qué es un ácido según la teoría de Arrhenius?</p>
+      <label><input type="radio" name="quim10" value="correcto"> A) Sustancia que libera iones H<sup>+</sup> en solución acuosa</label><br>
+      <label><input type="radio" name="quim10" value="B"> B) Sustancia que acepta electrones</label><br>
+      <label><input type="radio" name="quim10" value="C"> C) Sustancia que libera iones OH<sup>-</sup></label><br>
+      <label><input type="radio" name="quim10" value="D"> D) Sustancia neutra</label>
+    </li>
+  </ol>
+</section>
+<section class="materias" data-seccion="geografia">
+  <h3>Geografía</h3>
+  <ol start="29">
+    <li>
+      <p>¿Cuál es el continente más grande del mundo?</p>
+      <label><input type="radio" name="geo1" value="correcto"> A) Asia</label><br>
+      <label><input type="radio" name="geo1" value="B"> B) América</label><br>
+      <label><input type="radio" name="geo1" value="C"> C) África</label><br>
+      <label><input type="radio" name="geo1" value="D"> D) Europa</label>
+    </li>
+    <li>
+      <p>¿Qué océano se encuentra entre América y Europa?</p>
+      <label><input type="radio" name="geo2" value="A"> A) Océano Pacífico</label><br>
+      <label><input type="radio" name="geo2" value="correcto"> B) Océano Atlántico</label><br>
+      <label><input type="radio" name="geo2" value="C"> C) Océano Índico</label><br>
+      <label><input type="radio" name="geo2" value="D"> D) Océano Ártico</label>
+    </li>
+    <li>
+      <p>¿Cuál es el país con mayor población del mundo?</p>
+      <label><input type="radio" name="geo3" value="A"> A) Estados Unidos</label><br>
+      <label><input type="radio" name="geo3" value="B"> B) India</label><br>
+      <label><input type="radio" name="geo3" value="correcto"> C) China</label><br>
+      <label><input type="radio" name="geo3" value="D"> D) Rusia</label>
+    </li>
+    <li>
+      <p>¿Qué línea divide la Tierra en hemisferio norte y sur?</p>
+      <label><input type="radio" name="geo4" value="correcto"> A) Ecuador</label><br>
+      <label><input type="radio" name="geo4" value="B"> B) Meridiano de Greenwich</label><br>
+      <label><input type="radio" name="geo4" value="C"> C) Trópico de Cáncer</label><br>
+      <label><input type="radio" name="geo4" value="D"> D) Trópico de Capricornio</label>
+    </li>
+    <li>
+      <p>¿En qué continente se encuentra el desierto del Sahara?</p>
+      <label><input type="radio" name="geo5" value="A"> A) Asia</label><br>
+      <label><input type="radio" name="geo5" value="B"> B) América</label><br>
+      <label><input type="radio" name="geo5" value="correcto"> C) África</label><br>
+      <label><input type="radio" name="geo5" value="D"> D) Oceanía</label>
+    </li>
+    <li>
+      <p>¿Cuál es la capital de México?</p>
+      <label><input type="radio" name="geo6" value="A"> A) Guadalajara</label><br>
+      <label><input type="radio" name="geo6" value="B"> B) Monterrey</label><br>
+      <label><input type="radio" name="geo6" value="C"> C) Puebla</label><br>
+      <label><input type="radio" name="geo6" value="correcto"> D) Ciudad de México</label>
+    </li>
+    <li>
+      <p>¿Cuál es el río más largo del mundo?</p>
+      <label><input type="radio" name="geo7" value="A"> A) Amazonas</label><br>
+      <label><input type="radio" name="geo7" value="correcto"> B) Nilo</label><br>
+      <label><input type="radio" name="geo7" value="C"> C) Yangtsé</label><br>
+      <label><input type="radio" name="geo7" value="D"> D) Misisipi</label>
+    </li>
+    <li>
+      <p>¿Qué país tiene forma de bota?</p>
+      <label><input type="radio" name="geo8" value="A"> A) España</label><br>
+      <label><input type="radio" name="geo8" value="B"> B) Francia</label><br>
+      <label><input type="radio" name="geo8" value="correcto"> C) Italia</label><br>
+      <label><input type="radio" name="geo8" value="D"> D) Grecia</label>
+    </li>
+    <li>
+      <p>¿Qué país tiene más volcanes activos?</p>
+      <label><input type="radio" name="geo9" value="A"> A) México</label><br>
+      <label><input type="radio" name="geo9" value="correcto"> B) Indonesia</label><br>
+      <label><input type="radio" name="geo9" value="C"> C) Japón</label><br>
+      <label><input type="radio" name="geo9" value="D"> D) Chile</label>
+    </li>
+    <li>
+      <p>¿Qué estados de México tienen costas en el Golfo de México?</p>
+      <label><input type="radio" name="geo10" value="A"> A) Sinaloa, Sonora y Nayarit</label><br>
+      <label><input type="radio" name="geo10" value="B"> B) Guerrero, Oaxaca y Chiapas</label><br>
+      <label><input type="radio" name="geo10" value="correcto"> C) Tamaulipas, Veracruz y Tabasco</label><br>
+      <label><input type="radio" name="geo10" value="D"> D) Baja California, Colima y Jalisco</label>
+    </li>
+  </ol>
+</section>
+<section class="materias" data-seccion="historia">
+  <h3>Historia</h3>
+  <ol start="39">
+    <li>
+      <p>¿En qué año se consumó la Independencia de México?</p>
+      <label><input type="radio" name="his1" value="A"> A) 1810</label><br>
+      <label><input type="radio" name="his1" value="B"> B) 1815</label><br>
+      <label><input type="radio" name="his1" value="correcto"> C) 1821</label><br>
+      <label><input type="radio" name="his1" value="D"> D) 1824</label>
+    </li>
+    <li>
+      <p>¿Quién inició la lucha por la Independencia de México?</p>
+      <label><input type="radio" name="his2" value="correcto"> A) Miguel Hidalgo</label><br>
+      <label><input type="radio" name="his2" value="B"> B) José María Morelos</label><br>
+      <label><input type="radio" name="his2" value="C"> C) Vicente Guerrero</label><br>
+      <label><input type="radio" name="his2" value="D"> D) Agustín de Iturbide</label>
+    </li>
+    <li>
+      <p>¿Cuál fue la principal causa de la Revolución Mexicana?</p>
+      <label><input type="radio" name="his3" value="A"> A) La invasión francesa</label><br>
+      <label><input type="radio" name="his3" value="correcto"> B) La dictadura de Porfirio Díaz</label><br>
+      <label><input type="radio" name="his3" value="C"> C) La independencia</label><br>
+      <label><input type="radio" name="his3" value="D"> D) La guerra con Estados Unidos</label>
+    </li>
+    <li>
+      <p>¿Qué civilización prehispánica construyó Chichén Itzá?</p>
+      <label><input type="radio" name="his4" value="A"> A) Mexicas</label><br>
+      <label><input type="radio" name="his4" value="correcto"> B) Mayas</label><br>
+      <label><input type="radio" name="his4" value="C"> C) Zapotecas</label><br>
+      <label><input type="radio" name="his4" value="D"> D) Olmecas</label>
+    </li>
+    <li>
+      <p>¿En qué fecha se celebra la Independencia de México?</p>
+      <label><input type="radio" name="his5" value="correcto"> A) 16 de septiembre</label><br>
+      <label><input type="radio" name="his5" value="B"> B) 20 de noviembre</label><br>
+      <label><input type="radio" name="his5" value="C"> C) 5 de mayo</label><br>
+      <label><input type="radio" name="his5" value="D"> D) 1 de septiembre</label>
+    </li>
+    <li>
+      <p>¿Qué presidente mexicano promulgó las Leyes de Reforma?</p>
+      <label><input type="radio" name="his6" value="A"> A) Porfirio Díaz</label><br>
+      <label><input type="radio" name="his6" value="B"> B) Lázaro Cárdenas</label><br>
+      <label><input type="radio" name="his6" value="correcto"> C) Benito Juárez</label><br>
+      <label><input type="radio" name="his6" value="D"> D) Venustiano Carranza</label>
+    </li>
+    <li>
+      <p>¿Qué país invadió México en 1862?</p>
+      <label><input type="radio" name="his7" value="A"> A) España</label><br>
+      <label><input type="radio" name="his7" value="correcto"> B) Francia</label><br>
+      <label><input type="radio" name="his7" value="C"> C) Inglaterra</label><br>
+      <label><input type="radio" name="his7" value="D"> D) Estados Unidos</label>
+    </li>
+    <li>
+      <p>¿En qué año comenzó la Revolución Mexicana?</p>
+      <label><input type="radio" name="his8" value="A"> A) 1915</label><br>
+      <label><input type="radio" name="his8" value="correcto"> B) 1910</label><br>
+      <label><input type="radio" name="his8" value="C"> C) 1920</label><br>
+      <label><input type="radio" name="his8" value="D"> D) 1905</label>
+    </li>
+    <li>
+      <p>¿Quién fue el emperador durante el Segundo Imperio Mexicano?</p>
+      <label><input type="radio" name="his9" value="A"> A) Agustín de Iturbide</label><br>
+      <label><input type="radio" name="his9" value="B"> B) Porfirio Díaz</label><br>
+      <label><input type="radio" name="his9" value="C"> C) Benito Juárez</label><br>
+      <label><input type="radio" name="his9" value="correcto"> D) Maximiliano de Habsburgo</label>
+    </li>
+    <li>
+      <p>¿Qué civilización mesoamericana usó el calendario solar más preciso?</p>
+      <label><input type="radio" name="his10" value="A"> A) Olmecas</label><br>
+      <label><input type="radio" name="his10" value="correcto"> B) Mayas</label><br>
+      <label><input type="radio" name="his10" value="C"> C) Zapotecas</label><br>
+      <label><input type="radio" name="his10" value="D"> D) Mexicas</label>
+    </li>
+  </ol>
+</section>
+<section class="materias" data-seccion="biologia">
+  <h3>Ciencias Naturales</h3>
+  <ol start="49">
+    <li>
+      <p>¿Cuál es la función principal del sistema respiratorio?</p>
+      <label><input type="radio" name="bio1" value="A"> A) Bombear sangre</label><br>
+      <label><input type="radio" name="bio1" value="correcto"> B) Intercambiar oxígeno y dióxido de carbono</label><br>
+      <label><input type="radio" name="bio1" value="C"> C) Transportar nutrientes</label><br>
+      <label><input type="radio" name="bio1" value="D"> D) Regular la temperatura</label>
+    </li>
+    <li>
+      <p>¿Qué órgano produce la insulina en el cuerpo humano?</p>
+      <label><input type="radio" name="bio2" value="A"> A) Hígado</label><br>
+      <label><input type="radio" name="bio2" value="B"> B) Riñón</label><br>
+      <label><input type="radio" name="bio2" value="correcto"> C) Páncreas</label><br>
+      <label><input type="radio" name="bio2" value="D"> D) Estómago</label>
+    </li>
+    <li>
+      <p>¿Cuál es la célula encargada de transportar oxígeno?</p>
+      <label><input type="radio" name="bio3" value="A"> A) Glóbulo blanco</label><br>
+      <label><input type="radio" name="bio3" value="correcto"> B) Glóbulo rojo</label><br>
+      <label><input type="radio" name="bio3" value="C"> C) Plaqueta</label><br>
+      <label><input type="radio" name="bio3" value="D"> D) Neurona</label>
+    </li>
+    <li>
+      <p>¿Cuál es la unidad básica de la vida?</p>
+      <label><input type="radio" name="bio4" value="A"> A) Tejido</label><br>
+      <label><input type="radio" name="bio4" value="B"> B) Órgano</label><br>
+      <label><input type="radio" name="bio4" value="correcto"> C) Célula</label><br>
+      <label><input type="radio" name="bio4" value="D"> D) Sistema</label>
+    </li>
+    <li>
+      <p>¿Cómo se llama el proceso por el cual las plantas elaboran su alimento?</p>
+      <label><input type="radio" name="bio5" value="A"> A) Respiración</label><br>
+      <label><input type="radio" name="bio5" value="B"> B) Fermentación</label><br>
+      <label><input type="radio" name="bio5" value="correcto"> C) Fotosíntesis</label><br>
+      <label><input type="radio" name="bio5" value="D"> D) Digestión</label>
+    </li>
+    <li>
+      <p>¿Qué función tiene el sistema digestivo?</p>
+      <label><input type="radio" name="bio6" value="A"> A) Filtrar sangre</label><br>
+      <label><input type="radio" name="bio6" value="correcto"> B) Transformar los alimentos en nutrientes</label><br>
+      <label><input type="radio" name="bio6" value="C"> C) Transportar oxígeno</label><br>
+      <label><input type="radio" name="bio6" value="D"> D) Coordinar los movimientos</label>
+    </li>
+    <li>
+      <p>¿Cuál es el órgano principal del sistema circulatorio?</p>
+      <label><input type="radio" name="bio7" value="A"> A) Pulmón</label><br>
+      <label><input type="radio" name="bio7" value="correcto"> B) Corazón</label><br>
+      <label><input type="radio" name="bio7" value="C"> C) Estómago</label><br>
+      <label><input type="radio" name="bio7" value="D"> D) Hígado</label>
+    </li>
+    <li>
+      <p>¿Qué sistema del cuerpo controla las funciones del organismo?</p>
+      <label><input type="radio" name="bio8" value="A"> A) Respiratorio</label><br>
+      <label><input type="radio" name="bio8" value="B"> B) Digestivo</label><br>
+      <label><input type="radio" name="bio8" value="C"> C) Circulatorio</label><br>
+      <label><input type="radio" name="bio8" value="correcto"> D) Nervioso</label>
+    </li>
+    <li>
+      <p>¿Qué tipo de ser vivo produce su propio alimento?</p>
+      <label><input type="radio" name="bio9" value="correcto"> A) Autótrofo</label><br>
+      <label><input type="radio" name="bio9" value="B"> B) Heterótrofo</label><br>
+      <label><input type="radio" name="bio9" value="C"> C) Omnívoro</label><br>
+      <label><input type="radio" name="bio9" value="D"> D) Herbívoro</label>
+    </li>
+    <li>
+      <p>¿Qué nombre recibe el conjunto de procesos que realiza un ser vivo para mantenerse con vida?</p>
+      <label><input type="radio" name="bio10" value="A"> A) Fotosíntesis</label><br>
+      <label><input type="radio" name="bio10" value="B"> B) Reproducción</label><br>
+      <label><input type="radio" name="bio10" value="correcto"> C) Metabolismo</label><br>
+      <label><input type="radio" name="bio10" value="D"> D) Adaptación</label>
+    </li>
+  </ol>
+</section>
+<section class="materias" data-seccion="civismo">
+  <h3>Civismo</h3>
+  <ol start="59">
+    <li>
+      <p>¿Cuál es el objetivo principal de las leyes en una sociedad?</p>
+      <label><input type="radio" name="civ1" value="A"> A) Castigar a los ciudadanos</label><br>
+      <label><input type="radio" name="civ1" value="correcto"> B) Mantener el orden y la justicia</label><br>
+      <label><input type="radio" name="civ1" value="C"> C) Aumentar los impuestos</label><br>
+      <label><input type="radio" name="civ1" value="D"> D) Limitar la libertad</label>
+    </li>
+    <li>
+      <p>¿Qué significa vivir en democracia?</p>
+      <label><input type="radio" name="civ2" value="A"> A) Un solo partido gobierna</label><br>
+      <label><input type="radio" name="civ2" value="correcto"> B) El pueblo elige a sus representantes</label><br>
+      <label><input type="radio" name="civ2" value="C"> C) Hay un rey como gobernante</label><br>
+      <label><input type="radio" name="civ2" value="D"> D) No hay elecciones libres</label>
+    </li>
+    <li>
+      <p>¿Qué documento establece los derechos y deberes de los mexicanos?</p>
+      <label><input type="radio" name="civ3" value="A"> A) Código Civil</label><br>
+      <label><input type="radio" name="civ3" value="B"> B) Ley de Ingresos</label><br>
+      <label><input type="radio" name="civ3" value="correcto"> C) Constitución Política</label><br>
+      <label><input type="radio" name="civ3" value="D"> D) Reglamento Escolar</label>
+    </li>
+    <li>
+      <p>¿Qué valor se practica al respetar las opiniones de los demás?</p>
+      <label><input type="radio" name="civ4" value="A"> A) Igualdad</label><br>
+      <label><input type="radio" name="civ4" value="B"> B) Justicia</label><br>
+      <label><input type="radio" name="civ4" value="correcto"> C) Tolerancia</label><br>
+      <label><input type="radio" name="civ4" value="D"> D) Responsabilidad</label>
+    </li>
+    <li>
+      <p>¿Qué es la equidad de género?</p>
+      <label><input type="radio" name="civ5" value="A"> A) Dar más derechos a las mujeres</label><br>
+      <label><input type="radio" name="civ5" value="B"> B) Que hombres y mujeres sean iguales físicamente</label><br>
+      <label><input type="radio" name="civ5" value="correcto"> C) Igualdad de oportunidades sin importar el sexo</label><br>
+      <label><input type="radio" name="civ5" value="D"> D) Que las mujeres manden siempre</label>
+    </li>
+    <li>
+      <p>¿Qué institución organiza las elecciones en México?</p>
+      <label><input type="radio" name="civ6" value="A"> A) SEP</label><br>
+      <label><input type="radio" name="civ6" value="B"> B) SAT</label><br>
+      <label><input type="radio" name="civ6" value="correcto"> C) INE</label><br>
+      <label><input type="radio" name="civ6" value="D"> D) CNDH</label>
+    </li>
+    <li>
+      <p>¿Qué derecho tiene un niño a recibir educación gratuita?</p>
+      <label><input type="radio" name="civ7" value="A"> A) Derecho al trabajo</label><br>
+      <label><input type="radio" name="civ7" value="B"> B) Derecho a la libertad</label><br>
+      <label><input type="radio" name="civ7" value="correcto"> C) Derecho a la educación</label><br>
+      <label><input type="radio" name="civ7" value="D"> D) Derecho a la salud</label>
+    </li>
+    <li>
+      <p>¿Qué valor practicas al cuidar el medio ambiente?</p>
+      <label><input type="radio" name="civ8" value="A"> A) Tolerancia</label><br>
+      <label><input type="radio" name="civ8" value="B"> B) Igualdad</label><br>
+      <label><input type="radio" name="civ8" value="C"> C) Justicia</label><br>
+      <label><input type="radio" name="civ8" value="correcto"> D) Responsabilidad</label>
+    </li>
+    <li>
+      <p>¿Qué significa el derecho a la libertad de expresión?</p>
+      <label><input type="radio" name="civ9" value="correcto"> A) Poder expresar ideas sin ser censurado</label><br>
+      <label><input type="radio" name="civ9" value="B"> B) Decir mentiras</label><br>
+      <label><input type="radio" name="civ9" value="C"> C) Hablar en otro idioma</label><br>
+      <label><input type="radio" name="civ9" value="D"> D) Interrumpir a otros</label>
+    </li>
+    <li>
+      <p>¿Qué valor se practica al cumplir con nuestras obligaciones?</p>
+      <label><input type="radio" name="civ10" value="A"> A) Igualdad</label><br>
+      <label><input type="radio" name="civ10" value="B"> B) Justicia</label><br>
+      <label><input type="radio" name="civ10" value="C"> C) Tolerancia</label><br>
+      <label><input type="radio" name="civ10" value="correcto"> D) Responsabilidad</label>
+    </li>
+  </ol>
+</section>
+      </form>
+     <button onclick="finalizarExamen()" style="margin-top: 10px; padding: 8px 15px; background-color: #79032a; color: white; border: none; border-radius: 5px; cursor: pointer;">Enviar y ver resultados</button>
+      <div id="resultadoFinal" style="margin-top: 20px; font-weight: bold;"></div>
     </section>
+    
+
+    <aside class="recomendaciones">
+      <h3>Progreso</h3>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <canvas id="progressChart" width="200" height="200"></canvas>
+        <p id="tiempo" style="margin-top: 10px; font-weight: bold; font-size: 1.1em;">00:00</p>
+      </div>
+
+    </aside>
   </main>
 
   <div class="sidebar-container">
@@ -44,25 +571,169 @@
           <li><a href="https://drive.google.com/drive/folders/1LZnu_uk8RA2GXr4ZI-FAj4QXp1x3YNnC?usp=drive_link">Guías</a></li>
         </ul>
       </div>
-      <div>
-                <div class="socials">
-                    <strong>Síguenos:</strong><br>
-                    <a href="#">Facebook</a>
-                    <a href="#">Instagram</a>
-                    <a href="#">YouTube</a>
-                </div>
-                  <button onclick="cerrarSesion()">Cerrar sesión</button>
-            </div>
+      <div class="socials">
+        <strong>Síguenos:</strong><br>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+        <button onclick="cerrarSesion()">Cerrar sesión</button>
+      </div>
     </aside>
   </div>
 
-  <footer>&copy; POLINGRESO™ 2025</footer>
+  <footer>&copy; 2025 - POLINGRESO™</footer>
 
-  <script>
-    function cerrarSesion() {
-      alert("Sesión cerrada correctamente");
-      window.location.href = "index.html";
+<script>
+  function cerrarSesion() {
+  alert("Sesión cerrada correctamente");
+  window.location.href = "index.html";
+}
+
+const totalPreguntas = 68;
+const radios = document.querySelectorAll('input[type="radio"]');
+const canvas = document.getElementById('progressChart');
+const ctx = canvas.getContext('2d');
+const tiempo = document.getElementById('tiempo');
+const iniciarBtn = document.getElementById('iniciarBtn');
+let respondidas = new Set();
+let intervalo;
+let segundos = 0;
+
+const secciones = {
+  matematicas: {
+    preguntas: ["mat1","mat2","mat3","mat4","mat5","mat6","mat7","mat8"],
+    color: "#FF0000" 
+  },
+  español: {
+    preguntas: ["esp1", "esp2", "esp3", "esp4", "esp5", "esp6", "esp7", "esp8", "esp9", "esp10"],
+    color: "#0000CD" 
+  },
+  quimica: {
+    preguntas: ["quim1", "quim2", "quim3", "quim4", "quim5", "quim6", "quim7", "quim8", "quim9", "quim10"],
+    color: "#00BFFF" 
+  },
+  geografia: {
+    preguntas: ["geo1", "geo2", "geo3", "geo4", "geo5", "geo6", "geo7", "geo8", "geo9", "geo10"],
+    color: "#FFD700" 
+  },
+  historia: {
+    preguntas: ["his1", "his2", "his3", "his4", "his5", "his6", "hit7", "his8", "his9", "his10"],
+    color: "#228B22" 
+  },
+  biologia: {
+    preguntas: ["bio1", "bio2", "bio3", "bio4", "bio5", "bio6", "bio7", "bio8", "bio9", "bio10"],
+    color: "#90EE90" 
+  },
+  civismo: {
+    preguntas: ["civ1", "civ2", "civ3", "civ4", "civ5", "civ6", "civ7", "civ8", "civ9", "civ10"],
+    color: "#FF69B4" 
+  }
+};
+
+
+function dibujarProgresoPorMateria() {
+  ctx.clearRect(0, 0, 200, 200);
+
+
+  ctx.beginPath();
+  ctx.arc(100, 100, 80, 0, 2 * Math.PI);
+  ctx.fillStyle = '#f3ebeb';
+  ctx.fill();
+
+  let startAngle = -Math.PI / 2; 
+  const totalPreg = Object.values(secciones).reduce((acc, sec) => acc + sec.preguntas.length, 0);
+
+
+  for (const materia in secciones) {
+    const {preguntas, color} = secciones[materia];
+    let respondidasMateria = 0;
+    preguntas.forEach(preg => {
+      if (respondidas.has(preg)) respondidasMateria++;
+    });
+    const totalMateria = preguntas.length;
+    const porcentajeMateria = respondidasMateria / totalMateria;
+    const angleMateria = (totalMateria / totalPreg) * 2 * Math.PI;
+
+    if (respondidasMateria > 0) {
+      ctx.beginPath();
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 15;
+      ctx.arc(100, 100, 80, startAngle, startAngle + angleMateria * porcentajeMateria);
+      ctx.stroke();
     }
-  </script>
+
+    startAngle += angleMateria;
+  }
+
+
+  ctx.beginPath();
+  ctx.arc(100, 100, 50, 0, 2 * Math.PI);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+
+ 
+  ctx.fillStyle = 'black';
+  ctx.font = '20px sans-serif';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+
+  const totalRespondidas = respondidas.size;
+  const porcentajeTotal = (totalRespondidas / totalPreg) * 100;
+  ctx.fillText(`${Math.round(porcentajeTotal)}%`, 100, 100);
+}
+
+radios.forEach(radio => {
+  radio.disabled = true;
+});
+
+iniciarBtn.addEventListener('click', () => {
+  iniciarBtn.style.display = 'none';
+  radios.forEach(radio => radio.disabled = false);
+  intervalo = setInterval(() => {
+    segundos++;
+    let min = String(Math.floor(segundos / 60)).padStart(2, '0');
+    let seg = String(segundos % 60).padStart(2, '0');
+    tiempo.textContent = `${min}:${seg}`;
+  }, 1000);
+});
+
+radios.forEach(radio => {
+  radio.addEventListener('change', () => {
+    respondidas.add(radio.name);
+    dibujarProgresoPorMateria();
+  });
+});
+
+
+dibujarProgresoPorMateria();
+
+function finalizarExamen() {
+  clearInterval(intervalo);
+
+  let total = 0;
+  let detalle = "<h3>Resultados:</h3>";
+
+  for (const materia in secciones) {
+    let aciertos = 0;
+    secciones[materia].preguntas.forEach(nombre => {
+      const seleccion = document.querySelector(`input[name="${nombre}"]:checked`);
+      if (seleccion && seleccion.value === "correcto") aciertos++;
+    });
+    detalle += `<p>${materia.toUpperCase()}: ${aciertos} aciertos</p>`;
+    total += aciertos;
+  }
+
+  const tiempoFinal = tiempo.textContent;
+  detalle += `<p><strong>Total: ${total} aciertos</strong></p>`;
+  detalle += `<p><strong>Tiempo total: ${tiempoFinal}</strong></p>`;
+
+  document.getElementById("resultadoFinal").innerHTML = detalle;
+
+  radios.forEach(radio => {
+    radio.disabled = true;
+  });
+}
+</script>
+
 </body>
 </html>
