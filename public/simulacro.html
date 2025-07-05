@@ -19,7 +19,7 @@
     <nav>
       <button onclick="location.href='vocacional.html'">CONOCE VOCACIONAL</button>
       <button onclick="location.href='ingreso.html'">PROCESO DE INGRESO</button>
-      <button onclick="location.href='estudio.html'">ESTUDIO PROACTIVO</button>
+      <button onclick="location.href='estudio.html'">ESTUDIO ACTIVO</button>
       <button onclick="location.href='simulacro.html'">EXAMEN SIMULACRO</button>
     </nav>
   </header>
@@ -585,154 +585,151 @@
 
 <script>
   function cerrarSesion() {
-  alert("Sesión cerrada correctamente");
-  window.location.href = "index.html";
-}
-
-const totalPreguntas = 68;
-const radios = document.querySelectorAll('input[type="radio"]');
-const canvas = document.getElementById('progressChart');
-const ctx = canvas.getContext('2d');
-const tiempo = document.getElementById('tiempo');
-const iniciarBtn = document.getElementById('iniciarBtn');
-let respondidas = new Set();
-let intervalo;
-let segundos = 0;
-
-const secciones = {
-  matematicas: {
-    preguntas: ["mat1","mat2","mat3","mat4","mat5","mat6","mat7","mat8"],
-    color: "#FF0000" 
-  },
-  español: {
-    preguntas: ["esp1", "esp2", "esp3", "esp4", "esp5", "esp6", "esp7", "esp8", "esp9", "esp10"],
-    color: "#0000CD" 
-  },
-  quimica: {
-    preguntas: ["quim1", "quim2", "quim3", "quim4", "quim5", "quim6", "quim7", "quim8", "quim9", "quim10"],
-    color: "#00BFFF" 
-  },
-  geografia: {
-    preguntas: ["geo1", "geo2", "geo3", "geo4", "geo5", "geo6", "geo7", "geo8", "geo9", "geo10"],
-    color: "#FFD700" 
-  },
-  historia: {
-    preguntas: ["his1", "his2", "his3", "his4", "his5", "his6", "his7", "his8", "his9", "his10"],
-    color: "#228B22" 
-  },
-  biologia: {
-    preguntas: ["bio1", "bio2", "bio3", "bio4", "bio5", "bio6", "bio7", "bio8", "bio9", "bio10"],
-    color: "#90EE90" 
-  },
-  civismo: {
-    preguntas: ["civ1", "civ2", "civ3", "civ4", "civ5", "civ6", "civ7", "civ8", "civ9", "civ10"],
-    color: "#FF69B4" 
+    alert("Sesión cerrada correctamente");
+    window.location.href = "index.html";
   }
-};
 
+  const totalPreguntas = 68;
+  const radios = document.querySelectorAll('input[type="radio"]');
+  const canvas = document.getElementById('progressChart');
+  const ctx = canvas.getContext('2d');
+  const tiempo = document.getElementById('tiempo');
+  const iniciarBtn = document.getElementById('iniciarBtn');
+  let respondidas = new Set();
+  let intervalo;
+  let segundos = 0;
 
-function dibujarProgresoPorMateria() {
-  ctx.clearRect(0, 0, 200, 200);
+  const secciones = {
+    matematicas: {
+      preguntas: ["mat1","mat2","mat3","mat4","mat5","mat6","mat7","mat8"],
+      color: "#FF0000" 
+    },
+    español: {
+      preguntas: ["esp1", "esp2", "esp3", "esp4", "esp5", "esp6", "esp7", "esp8", "esp9", "esp10"],
+      color: "#0000CD" 
+    },
+    quimica: {
+      preguntas: ["quim1", "quim2", "quim3", "quim4", "quim5", "quim6", "quim7", "quim8", "quim9", "quim10"],
+      color: "#00BFFF" 
+    },
+    geografia: {
+      preguntas: ["geo1", "geo2", "geo3", "geo4", "geo5", "geo6", "geo7", "geo8", "geo9", "geo10"],
+      color: "#FFD700" 
+    },
+    historia: {
+      preguntas: ["his1", "his2", "his3", "his4", "his5", "his6", "his7", "his8", "his9", "his10"],
+      color: "#228B22" 
+    },
+    biologia: {
+      preguntas: ["bio1", "bio2", "bio3", "bio4", "bio5", "bio6", "bio7", "bio8", "bio9", "bio10"],
+      color: "#90EE90" 
+    },
+    civismo: {
+      preguntas: ["civ1", "civ2", "civ3", "civ4", "civ5", "civ6", "civ7", "civ8", "civ9", "civ10"],
+      color: "#FF69B4" 
+    }
+  };
 
+  function dibujarProgresoPorMateria() {
+    ctx.clearRect(0, 0, 200, 200);
+    ctx.beginPath();
+    ctx.arc(100, 100, 80, 0, 2 * Math.PI);
+    ctx.fillStyle = '#f3ebeb';
+    ctx.fill();
 
-  ctx.beginPath();
-  ctx.arc(100, 100, 80, 0, 2 * Math.PI);
-  ctx.fillStyle = '#f3ebeb';
-  ctx.fill();
+    let startAngle = -Math.PI / 2; 
+    const totalPreg = Object.values(secciones).reduce((acc, sec) => acc + sec.preguntas.length, 0);
 
-  let startAngle = -Math.PI / 2; 
-  const totalPreg = Object.values(secciones).reduce((acc, sec) => acc + sec.preguntas.length, 0);
+    for (const materia in secciones) {
+      const {preguntas, color} = secciones[materia];
+      let respondidasMateria = 0;
+      preguntas.forEach(preg => {
+        if (respondidas.has(preg)) respondidasMateria++;
+      });
+      const totalMateria = preguntas.length;
+      const porcentajeMateria = respondidasMateria / totalMateria;
+      const angleMateria = (totalMateria / totalPreg) * 2 * Math.PI;
 
+      if (respondidasMateria > 0) {
+        ctx.beginPath();
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 15;
+        ctx.arc(100, 100, 80, startAngle, startAngle + angleMateria * porcentajeMateria);
+        ctx.stroke();
+      }
 
-  for (const materia in secciones) {
-    const {preguntas, color} = secciones[materia];
-    let respondidasMateria = 0;
-    preguntas.forEach(preg => {
-      if (respondidas.has(preg)) respondidasMateria++;
-    });
-    const totalMateria = preguntas.length;
-    const porcentajeMateria = respondidasMateria / totalMateria;
-    const angleMateria = (totalMateria / totalPreg) * 2 * Math.PI;
-
-    if (respondidasMateria > 0) {
-      ctx.beginPath();
-      ctx.strokeStyle = color;
-      ctx.lineWidth = 15;
-      ctx.arc(100, 100, 80, startAngle, startAngle + angleMateria * porcentajeMateria);
-      ctx.stroke();
+      startAngle += angleMateria;
     }
 
-    startAngle += angleMateria;
+    ctx.beginPath();
+    ctx.arc(100, 100, 50, 0, 2 * Math.PI);
+    ctx.fillStyle = 'white';
+    ctx.fill();
+
+    ctx.fillStyle = 'black';
+    ctx.font = '20px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+
+    const totalRespondidas = respondidas.size;
+    const porcentajeTotal = (totalRespondidas / totalPreg) * 100;
+    ctx.fillText(`${Math.round(porcentajeTotal)}%`, 100, 100);
   }
-
-
-  ctx.beginPath();
-  ctx.arc(100, 100, 50, 0, 2 * Math.PI);
-  ctx.fillStyle = 'white';
-  ctx.fill();
-
- 
-  ctx.fillStyle = 'black';
-  ctx.font = '20px sans-serif';
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-
-  const totalRespondidas = respondidas.size;
-  const porcentajeTotal = (totalRespondidas / totalPreg) * 100;
-  ctx.fillText(`${Math.round(porcentajeTotal)}%`, 100, 100);
-}
-
-radios.forEach(radio => {
-  radio.disabled = true;
-});
-
-iniciarBtn.addEventListener('click', () => {
-  iniciarBtn.style.display = 'none';
-  radios.forEach(radio => radio.disabled = false);
-  intervalo = setInterval(() => {
-    segundos++;
-    let min = String(Math.floor(segundos / 60)).padStart(2, '0');
-    let seg = String(segundos % 60).padStart(2, '0');
-    tiempo.textContent = `${min}:${seg}`;
-  }, 1000);
-});
-
-radios.forEach(radio => {
-  radio.addEventListener('change', () => {
-    respondidas.add(radio.name);
-    dibujarProgresoPorMateria();
-  });
-});
-
-
-dibujarProgresoPorMateria();
-
-function finalizarExamen() {
-  clearInterval(intervalo);
-
-  let total = 0;
-  let detalle = "<h3>Resultados:</h3>";
-
-  for (const materia in secciones) {
-    let aciertos = 0;
-    secciones[materia].preguntas.forEach(nombre => {
-      const seleccion = document.querySelector(`input[name="${nombre}"]:checked`);
-      if (seleccion && seleccion.value === "correcto") aciertos++;
-    });
-    detalle += `<p>${materia.toUpperCase()}: ${aciertos} aciertos</p>`;
-    total += aciertos;
-  }
-
-  const tiempoFinal = tiempo.textContent;
-  detalle += `<p><strong>Total: ${total} aciertos</strong></p>`;
-  detalle += `<p><strong>Tiempo total: ${tiempoFinal}</strong></p>`;
-
-  document.getElementById("resultadoFinal").innerHTML = detalle;
 
   radios.forEach(radio => {
     radio.disabled = true;
   });
-}
+
+  iniciarBtn.addEventListener('click', () => {
+    iniciarBtn.style.display = 'none';
+    radios.forEach(radio => radio.disabled = false);
+    intervalo = setInterval(() => {
+      segundos++;
+      let min = String(Math.floor(segundos / 60)).padStart(2, '0');
+      let seg = String(segundos % 60).padStart(2, '0');
+      tiempo.textContent = `${min}:${seg}`;
+    }, 1000);
+  });
+
+  radios.forEach(radio => {
+    radio.addEventListener('change', () => {
+      respondidas.add(radio.name);
+      dibujarProgresoPorMateria();
+    });
+  });
+
+  dibujarProgresoPorMateria();
+
+  function finalizarExamen() {
+    clearInterval(intervalo);
+
+    let total = 0;
+    let detalle = "<h3>Resultados:</h3>";
+    const resultadosPorMateria = {};
+
+    for (const materia in secciones) {
+      let aciertos = 0;
+      secciones[materia].preguntas.forEach(nombre => {
+        const seleccion = document.querySelector(`input[name="${nombre}"]:checked`);
+        if (seleccion && seleccion.value === "correcto") aciertos++;
+      });
+      resultadosPorMateria[materia] = aciertos;
+      detalle += `<p>${materia.toUpperCase()}: ${aciertos} aciertos</p>`;
+      total += aciertos;
+    }
+
+    localStorage.setItem("resultadosSimulacro", JSON.stringify(resultadosPorMateria));
+
+    const tiempoFinal = tiempo.textContent;
+    detalle += `<p><strong>Total: ${total} aciertos</strong></p>`;
+    detalle += `<p><strong>Tiempo total: ${tiempoFinal}</strong></p>`;
+
+    document.getElementById("resultadoFinal").innerHTML = detalle;
+
+    radios.forEach(radio => {
+      radio.disabled = true;
+    });
+  }
 </script>
 
 </body>

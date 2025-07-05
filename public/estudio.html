@@ -1,36 +1,499 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Estudio Proactivo</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <div style="display: flex; justify-content: space-between; align-items: center;">
-      <img src="img/edupolitech.png" alt="Logo Edupolitech" style="height: 60px;">
-      <div><h1>POLINGRESO</h1><p>ENCUENTRA TU ESCUELA, ENCUENTRA TU FUTURO</p></div>
-      <img src="img/polingreso.jpg" alt="Logo IPN" style="height: 60px;">
+      <img src="img/edupolitech.png" alt="Logo IPN" style="height: 60px;">
+      <div>
+        <h1>Estudio Activo</h1>
+      </div>
+      <img src="img/polingreso.jpg" alt="Logo Politécnico" style="height: 60px;">
     </div>
     <nav>
-            <button onclick="location.href='vocacional.html'">CONOCE VOCACIONAL</button>
-            <button onclick="location.href='ingreso.html'">PROCESO DE INGRESO</button>
-            <button onclick="location.href='estudio.html'">ESTUDIO PROACTIVO</button>
-            <button onclick="location.href='simulacro.html'">EXAMEN SIMULACRO</button>
-        </nav>
+      <button onclick="location.href='vocacional.html'">CONOCE VOCACIONAL</button>
+      <button onclick="location.href='ingreso.html'">PROCESO DE INGRESO</button>
+      <button onclick="location.href='estudio.html'">ESTUDIO ACTIVO</button>
+      <button onclick="location.href='simulacro.html'">EXAMEN SIMULACRO</button>
+    </nav>
   </header>
 
-  <main>
-    <section class="ingreso">
+  <main class="container">
+    <section class="vocacionales">
       <h2>Estudio Proactivo</h2>
-      <p>Aquí encontrarás recursos, guías y tips para planificar tu estudio de forma efectiva y alcanzar un alto rendimiento en tu examen de ingreso.</p>
-      <ol>
-        <li>Descarga guías temáticas de las áreas clave.</li>
-        <li>Revisa ejemplos y ejercicios resueltos.</li>
-        <li>Planifica tu rutina con calendarios descargables.</li>
-        <li>Accede a videos explicativos y recursos didácticos.</li>
-      </ol>
+      <p>Aquí verás los conceptos por materia para reforzar tus conocimientos.</p>
+
+      <div class="filter-container">
+        <select id="filtroMateria">
+          <option value="todos">-- Ver todas las materias --</option>
+          <option value="biologia">Biología</option>
+          <option value="matematicas">Matemáticas</option>
+          <option value="historia">Historia</option>
+          <option value="formacion">Formación Cívica y Ética</option>
+          <option value="quimica">Química</option>
+          <option value="geografia">Geografía</option>
+          <option value="espanol">Español</option>
+        </select>
+      </div>
+
+      <div id="contenedorConceptos">
+         <details class="concepto" data-materia="biologia">
+  <summary>Mitosis</summary>
+  <p>Proceso biológico que permite a los organismos pluricelulares incrementar su biomasa a través del tiempo.</p>
+</details>
+
+<details class="concepto" data-materia="biologia">
+  <summary>Fotosíntesis</summary>
+  <p>Proceso mediante el cual las plantas producen su alimento utilizando la luz solar, dióxido de carbono y agua.</p>
+</details>
+
+<details class="concepto" data-materia="biologia">
+  <summary>Sistema nervioso</summary>
+  <p>Encargado de coordinar y regular las funciones del cuerpo mediante impulsos eléctricos.</p>
+</details>
+
+<details class="concepto" data-materia="biologia">
+  <summary>Sistema digestivo</summary>
+  <p>Transforma los alimentos en nutrientes que el cuerpo puede absorber y utilizar.</p>
+</details>
+
+<details class="concepto" data-materia="biologia">
+  <summary>Célula</summary>
+  <p>Unidad básica de la vida, capaz de realizar todas las funciones vitales.</p>
+</details>
+
+<details class="concepto" data-materia="biologia">
+  <summary>Respiración celular</summary>
+  <p>Proceso por el cual las células obtienen energía a partir de nutrientes y oxígeno.</p>
+</details>
+
+<details class="concepto" data-materia="biologia">
+  <summary>Glóbulos rojos</summary>
+  <p>Células sanguíneas encargadas de transportar oxígeno desde los pulmones hacia los tejidos.</p>
+</details>
+
+<details class="concepto" data-materia="biologia">
+  <summary>Autótrofo</summary>
+  <p>Ser vivo que puede producir su propio alimento a partir de compuestos inorgánicos, como las plantas.</p>
+</details>
+<details class="concepto" data-materia="biologia">
+  <summary>Homeostasis</summary>
+  <p>Capacidad de los organismos para mantener un ambiente interno estable a pesar de los cambios externos.</p>
+</details>
+
+<details class="concepto" data-materia="biologia">
+  <summary>ADN</summary>
+  <p>Molécula que contiene la información genética usada en el desarrollo y funcionamiento de los seres vivos.</p>
+</details>
+
+<details class="concepto" data-materia="biologia">
+  <summary>Fotosíntesis</summary>
+  <p>Proceso por el que las plantas convierten luz solar en energía química.</p>
+</details>
+
+<details class="concepto" data-materia="biologia">
+  <summary>Ósmosis</summary>
+  <p>Movimiento del agua a través de una membrana semipermeable desde una región de menor concentración de solutos a una mayor.</p>
+</details>
+
+<details class="concepto" data-materia="biologia">
+  <summary>Cloroplasto</summary>
+  <p>Organelo celular donde ocurre la fotosíntesis en las células vegetales.</p>
+</details>
+
+<details class="concepto" data-materia="biologia">
+  <summary>Reproducción sexual</summary>
+  <p>Mecanismo de reproducción que involucra la unión de gametos masculinos y femeninos para formar un nuevo organismo.</p>
+</details>
+
+<details class="concepto" data-materia="biologia">
+  <summary>Gen</summary>
+  <p>Unidad básica de la herencia que contiene información para la síntesis de proteínas.</p>
+</details>
+
+<details class="concepto" data-materia="biologia">
+  <summary>Enzima</summary>
+  <p>Proteína que acelera las reacciones químicas en los organismos vivos.</p>
+</details>
+<details class="concepto" data-materia="matematicas">
+  <summary>Variable</summary>
+  <p>Símbolo que representa un valor numérico que puede cambiar dentro de un problema o expresión.</p>
+</details>
+
+<details class="concepto" data-materia="matematicas">
+  <summary>Ecuación</summary>
+  <p>Igualdad matemática que contiene una o más incógnitas o variables.</p>
+</details>
+
+<details class="concepto" data-materia="matematicas">
+  <summary>Función</summary>
+  <p>Relación entre dos conjuntos donde a cada elemento del primero le corresponde uno y solo un elemento del segundo.</p>
+</details>
+
+<details class="concepto" data-materia="matematicas">
+  <summary>Ángulo</summary>
+  <p>Figura formada por dos rayos que comparten un punto común llamado vértice.</p>
+</details>
+
+<details class="concepto" data-materia="matematicas">
+  <summary>Probabilidad</summary>
+  <p>Medida numérica que indica la posibilidad de que ocurra un evento.</p>
+</details>
+
+<details class="concepto" data-materia="matematicas">
+  <summary>Desviación estándar</summary>
+  <p>Medida que indica qué tanto se dispersan los datos respecto a la media.</p>
+</details>
+
+<details class="concepto" data-materia="matematicas">
+  <summary>Polígono</summary>
+  <p>Figura geométrica cerrada formada por segmentos de línea recta llamados lados.</p>
+</details>
+
+<details class="concepto" data-materia="matematicas">
+  <summary>Logaritmo</summary>
+  <p>Operación matemática inversa a la potenciación. El logaritmo base b de un número es el exponente al que hay que elevar b para obtener ese número.</p>
+</details>
+        <details class="concepto" data-materia="matematicas">
+  <summary>Área de triángulo</summary>
+  <p>Se calcula como base por altura dividido entre dos: A = (b × h) / 2.</p>
+</details>
+
+<details class="concepto" data-materia="matematicas">
+  <summary>Potencia</summary>
+  <p>Operación matemática que consiste en multiplicar un número por sí mismo varias veces. Ejemplo: 3² = 9.</p>
+</details>
+
+<details class="concepto" data-materia="matematicas">
+  <summary>Raíz cuadrada</summary>
+  <p>Es el número que multiplicado por sí mismo da como resultado el número original. Ejemplo: √49 = 7.</p>
+</details>
+
+<details class="concepto" data-materia="matematicas">
+  <summary>Pendiente</summary>
+  <p>Relación entre el cambio en y respecto al cambio en x en una recta. Fórmula: m = (y₂ - y₁)/(x₂ - x₁).</p>
+</details>
+
+<details class="concepto" data-materia="matematicas">
+  <summary>Orden de operaciones</summary>
+  <p>Secuencia que se sigue al resolver una expresión matemática: paréntesis, potencias, multiplicación/división, suma/resta.</p>
+</details>
+
+<details class="concepto" data-materia="matematicas">
+  <summary>Fracción</summary>
+  <p>Representa una parte de un todo. Tiene numerador (arriba) y denominador (abajo).</p>
+</details>
+
+<details class="concepto" data-materia="matematicas">
+  <summary>Media</summary>
+  <p>Promedio aritmético. Se obtiene sumando todos los datos y dividiéndolos entre la cantidad de ellos.</p>
+</details>
+
+<details class="concepto" data-materia="matematicas">
+  <summary>Perímetro</summary>
+  <p>Es la suma de las longitudes de todos los lados de una figura geométrica.</p>
+</details>
+        <details class="concepto" data-materia="historia">
+          <summary>Consumación de la Independencia</summary>
+          <p>Ocurrió en 1821 con la entrada del Ejército Trigarante a la Ciudad de México.</p>
+        </details>
+        <details class="concepto" data-materia="historia">
+          <summary>Revolución Mexicana</summary>
+          <p>Conflicto armado que comenzó en 1910 en contra de la dictadura de Porfirio Díaz.</p>
+        </details>
+        <details class="concepto" data-materia="historia">
+  <summary>Colonización</summary>
+  <p>Proceso mediante el cual un país establece dominio político y económico sobre otro territorio y su población.</p>
+</details>
+
+<details class="concepto" data-materia="historia">
+  <summary>Reforma Liberal</summary>
+  <p>Movimiento del siglo XIX en México que buscó modernizar el país y limitar el poder de la iglesia y el ejército.</p>
+</details>
+
+<details class="concepto" data-materia="historia">
+  <summary>Imperio Azteca</summary>
+  <p>Civilización mesoamericana que dominó gran parte del centro de México antes de la llegada de los españoles.</p>
+</details>
+
+<details class="concepto" data-materia="historia">
+  <summary>Revolución Industrial</summary>
+  <p>Transformación económica y social iniciada en el siglo XVIII que introdujo la producción mecanizada y nuevas tecnologías.</p>
+</details>
+
+<details class="concepto" data-materia="historia">
+  <summary>Constitución de 1917</summary>
+  <p>Documento fundamental que estableció las bases jurídicas y sociales después de la Revolución Mexicana.</p>
+</details>
+
+<details class="concepto" data-materia="historia">
+  <summary>Guerra Fría</summary>
+  <p>Periodo de tensión política y militar entre Estados Unidos y la Unión Soviética después de la Segunda Guerra Mundial.</p>
+</details>
+
+<details class="concepto" data-materia="historia">
+  <summary>Edad Media</summary>
+  <p>Etapa histórica entre la caída del Imperio Romano y el Renacimiento, caracterizada por el feudalismo y la influencia religiosa.</p>
+</details>
+
+<details class="concepto" data-materia="historia">
+  <summary>Independencia de México</summary>
+  <p>Proceso que culminó en 1821 con la separación de México del dominio español.</p>
+</details>
+        <details class="concepto" data-materia="formacion">
+  <summary>Derechos humanos</summary>
+  <p>Conjunto de garantías y libertades que toda persona posee por el solo hecho de ser humano.</p>
+</details>
+
+<details class="concepto" data-materia="formacion">
+  <summary>Responsabilidad</summary>
+  <p>Obligación de responder por las propias acciones y cumplir con deberes.</p>
+</details>
+
+<details class="concepto" data-materia="formacion">
+  <summary>Justicia</summary>
+  <p>Principio que busca dar a cada quien lo que le corresponde de manera equitativa.</p>
+</details>
+
+<details class="concepto" data-materia="formacion">
+  <summary>Solidaridad</summary>
+  <p>Apoyo y compromiso con otras personas para alcanzar un bien común.</p>
+</details>
+
+<details class="concepto" data-materia="formacion">
+  <summary>Democracia participativa</summary>
+  <p>Modelo de democracia donde los ciudadanos intervienen directamente en la toma de decisiones.</p>
+</details>
+
+<details class="concepto" data-materia="formacion">
+  <summary>Ética</summary>
+  <p>Disciplina que estudia la moral y las acciones humanas en términos de bien y mal.</p>
+</details>
+
+<details class="concepto" data-materia="formacion">
+  <summary>Libertad</summary>
+  <p>Capacidad de actuar y tomar decisiones de manera autónoma, respetando los derechos de otros.</p>
+</details>
+
+<details class="concepto" data-materia="formacion">
+  <summary>Igualdad</summary>
+  <p>Principio que reconoce que todas las personas tienen los mismos derechos y oportunidades.</p>
+</details>
+
+<details class="concepto" data-materia="quimica">
+  <summary>Enlace covalente</summary>
+  <p>Tipo de enlace donde los átomos comparten electrones.</p>
+</details>
+
+<details class="concepto" data-materia="quimica">
+  <summary>pH neutro</summary>
+  <p>Una solución con pH 7 es neutra, como el agua pura.</p>
+</details>
+
+<details class="concepto" data-materia="quimica">
+  <summary>Elemento Na</summary>
+  <p>Na es el símbolo del sodio en la tabla periódica.</p>
+</details>
+
+<details class="concepto" data-materia="quimica">
+  <summary>Combustión completa</summary>
+  <p>Reacción química en la que se produce dióxido de carbono (CO₂) y agua (H₂O).</p>
+</details>
+
+<details class="concepto" data-materia="quimica">
+  <summary>Sublimación</summary>
+  <p>Cambio de estado en el que una sustancia pasa de sólido a gas sin pasar por el estado líquido.</p>
+</details>
+
+<details class="concepto" data-materia="quimica">
+  <summary>Molécula</summary>
+  <p>Unidad más pequeña de un compuesto químico que conserva sus propiedades.</p>
+</details>
+
+<details class="concepto" data-materia="quimica">
+  <summary>Tabla periódica</summary>
+  <p>Fue propuesta por Dmitri Mendeléyev para organizar los elementos químicos según su número atómico.</p>
+</details>
+
+<details class="concepto" data-materia="quimica">
+  <summary>Electrón</summary>
+  <p>Partícula subatómica con carga negativa que orbita el núcleo del átomo.</p>
+</details>
+
+<details class="concepto" data-materia="quimica">
+  <summary>Ácido de Arrhenius</summary>
+  <p>Sustancia que libera iones H⁺ en solución acuosa.</p>
+</details>
+<details class="concepto" data-materia="quimica">
+  <summary>Átomo</summary>
+  <p>Unidad básica de la materia que conserva las propiedades químicas de un elemento.</p>
+</details>
+
+<details class="concepto" data-materia="quimica">
+  <summary>Mol</summary>
+  <p>Unidad que mide la cantidad de sustancia que contiene 6.022 × 10²³ partículas.</p>
+</details>
+
+<details class="concepto" data-materia="quimica">
+  <summary>Electronegatividad</summary>
+  <p>Capacidad de un átomo para atraer electrones hacia sí en un enlace químico.</p>
+</details>
+
+<details class="concepto" data-materia="quimica">
+  <summary>Reacción ácido-base</summary>
+  <p>Intercambio de protones entre un ácido y una base, formando agua y una sal.</p>
+</details>
+
+<details class="concepto" data-materia="quimica">
+  <summary>Isótopos</summary>
+  <p>Átomos del mismo elemento con igual número de protones pero diferente número de neutrones.</p>
+</details>
+
+<details class="concepto" data-materia="quimica">
+  <summary>Catalizador</summary>
+  <p>Sustancia que acelera una reacción química sin consumirse en el proceso.</p>
+</details>
+
+<details class="concepto" data-materia="quimica">
+  <summary>Estado de oxidación</summary>
+  <p>Número que indica la cantidad de electrones que un átomo gana, pierde o comparte en un enlace.</p>
+</details>
+
+<details class="concepto" data-materia="quimica">
+  <summary>Electrólisis</summary>
+  <p>Proceso de descomposición química mediante el paso de una corriente eléctrica.</p>
+</details>
+       <details class="concepto" data-materia="geografia">
+  <summary>Latitud</summary>
+  <p>Distancia angular al norte o al sur del ecuador, medida en grados.</p>
+</details>
+
+<details class="concepto" data-materia="geografia">
+  <summary>Longitud</summary>
+  <p>Distancia angular al este o al oeste del meridiano de Greenwich, medida en grados.</p>
+</details>
+
+<details class="concepto" data-materia="geografia">
+  <summary>Clima</summary>
+  <p>Conjunto de condiciones atmosféricas que caracterizan una región durante un largo periodo.</p>
+</details>
+
+<details class="concepto" data-materia="geografia">
+  <summary>Biósfera</summary>
+  <p>Conjunto de todos los ecosistemas de la Tierra donde existe vida.</p>
+</details>
+
+<details class="concepto" data-materia="geografia">
+  <summary>Mapa topográfico</summary>
+  <p>Representación detallada de la superficie terrestre que muestra relieve, elevaciones y accidentes geográficos.</p>
+</details>
+
+<details class="concepto" data-materia="geografia">
+  <summary>Río</summary>
+  <p>Corriente natural de agua que fluye hacia un lago, mar u océano.</p>
+</details>
+
+<details class="concepto" data-materia="geografia">
+  <summary>Península</summary>
+  <p>Extensión de tierra rodeada de agua por tres lados y unida a una masa terrestre más grande.</p>
+</details>
+
+<details class="concepto" data-materia="geografia">
+  <summary>Zona climática</summary>
+  <p>Región de la Tierra con características climáticas similares, como tropical, templada o polar.</p>
+</details>
+       <details class="concepto" data-materia="espanol">
+  <summary>Sinónimo</summary>
+  <p>Palabra que tiene un significado similar a otra. Ejemplo: feliz - contento.</p>
+</details>
+
+<details class="concepto" data-materia="espanol">
+  <summary>Antónimo</summary>
+  <p>Palabra que tiene un significado contrario a otra. Ejemplo: grande - pequeño.</p>
+</details>
+
+<details class="concepto" data-materia="espanol">
+  <summary>Sujeto</summary>
+  <p>Parte de la oración que realiza la acción o de quien se dice algo. Ejemplo: “El perro” en “El perro ladra”.</p>
+</details>
+
+<details class="concepto" data-materia="espanol">
+  <summary>Verbo</summary>
+  <p>Palabra que indica acción, estado o proceso. Ejemplo: correr, ser, estudiar.</p>
+</details>
+
+<details class="concepto" data-materia="espanol">
+  <summary>Adverbio</summary>
+  <p>Modifica un verbo, un adjetivo o a otro adverbio. Ejemplo: rápidamente, muy, aquí.</p>
+</details>
+
+<details class="concepto" data-materia="espanol">
+  <summary>Tiempo verbal</summary>
+  <p>Indica el momento en que se realiza la acción. Ejemplo: presente, pasado o futuro.</p>
+</details>
+
+<details class="concepto" data-materia="espanol">
+  <summary>Pronombre</summary>
+  <p>Palabra que sustituye al sustantivo. Ejemplo: él, ella, nosotros.</p>
+</details>
+
+<details class="concepto" data-materia="espanol">
+  <summary>Uso de “porque”</summary>
+  <p>Se usa para responder una causa o dar una razón. Ejemplo: “No vine porque estaba enfermo.”</p>
+</details>
+<details class="concepto" data-materia="espanol">
+  <summary>Adjetivo</summary>
+  <p>Palabra que describe o califica al sustantivo. Ejemplo: casa grande.</p>
+</details>
+
+<details class="concepto" data-materia="espanol">
+  <summary>Sustantivo</summary>
+  <p>Palabra que nombra personas, animales, cosas, ideas o sentimientos. Ejemplo: perro, amor.</p>
+</details>
+
+<details class="concepto" data-materia="espanol">
+  <summary>Conjunción</summary>
+  <p>Palabra que une palabras o frases. Ejemplo: y, pero, o.</p>
+</details>
+
+<details class="concepto" data-materia="espanol">
+  <summary>Preposición</summary>
+  <p>Palabra que relaciona elementos de la oración indicando origen, destino, causa, etc. Ejemplo: a, de, por.</p>
+</details>
+
+<details class="concepto" data-materia="espanol">
+  <summary>Oración compuesta</summary>
+  <p>Oración formada por dos o más proposiciones unidas por conjunciones.</p>
+</details>
+
+<details class="concepto" data-materia="espanol">
+  <summary>Complemento directo</summary>
+  <p>Elemento de la oración que recibe directamente la acción del verbo.</p>
+</details>
+
+<details class="concepto" data-materia="espanol">
+  <summary>Voz pasiva</summary>
+  <p>Estructura en la que el sujeto recibe la acción en lugar de realizarla.</p>
+</details>
+
+<details class="concepto" data-materia="espanol">
+  <summary>Figura retórica</summary>
+  <p>Uso del lenguaje para crear efectos expresivos o estéticos, como metáfora o hipérbole.</p>
+</details>
+      </div>
     </section>
+
+    <aside class="recomendaciones">
+      <h3>Distribución</h3>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <canvas id="graficaMaterias" width="200" height="200"></canvas>
+      </div>
+    </aside>
   </main>
 
   <div class="sidebar-container">
@@ -42,29 +505,85 @@
           <li><a href="vocacional.html">Vocacionales</a></li>
           <li><a href="ingreso.html">Ingreso</a></li>
           <li><a href="simulacro.html">Examen Simulacro</a></li>
+          <li><a href="estudio.html">Estudio</a></li>
           <li><a href="https://drive.google.com/drive/folders/1sV99b4D8PzkdsprZFghpPoXG95UWggR8?usp=sharing">Material de Apoyo</a></li>
           <li><a href="https://drive.google.com/drive/folders/1LZnu_uk8RA2GXr4ZI-FAj4QXp1x3YNnC?usp=drive_link">Guías</a></li>
         </ul>
       </div>
-      <div>
-                <div class="socials">
-                    <strong>Síguenos:</strong><br>
-                    <a href="#">Facebook</a>
-                    <a href="#">Instagram</a>
-                    <a href="#">YouTube</a>
-                </div>
-                  <button onclick="cerrarSesion()">Cerrar sesión</button>
-            </div>
+      <div class="socials">
+        <strong>Síguenos:</strong><br>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+        <button onclick="cerrarSesion()">Cerrar sesión</button>
+      </div>
     </aside>
   </div>
 
-  <footer>&copy; POLINGRESO™ 2025</footer>
+  <footer>
+    &copy; 2025 - POLINGRESO™
+  </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
     function cerrarSesion() {
       alert("Sesión cerrada correctamente");
       window.location.href = "index.html";
     }
+ document.getElementById('filtroMateria').addEventListener('change', function () {
+    const seleccion = this.value;
+    const conceptos = document.querySelectorAll('.concepto');
+    conceptos.forEach(c => {
+      c.style.display = (seleccion === 'todos' || c.dataset.materia === seleccion) ? 'block' : 'none';
+    });
+  });
+
+  const resultados = JSON.parse(localStorage.getItem("resultadosSimulacro")) || {
+    historia: 0,
+    formacion: 0,
+    quimica: 0,
+    geografia: 0,
+    matematicas: 0,
+    biologia: 0,
+    español: 0
+  };
+
+  const ctx = document.getElementById('graficaMaterias').getContext('2d');
+  const graficaMaterias = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['Historia', 'Formación Cívica y Ética', 'Química', 'Geografía', 'Matemáticas', 'Biología', 'Español'],
+      datasets: [{
+        data: [
+          resultados.historia || 0,
+          resultados.formacion || 0,
+          resultados.quimica || 0,
+          resultados.geografia || 0,
+          resultados.matematicas || 0,
+          resultados.biologia || 0,
+          resultados.español || 0
+        ],
+                    backgroundColor: [
+          '#004d40', // historia
+          '#ff69b4', // Formacion
+          '#4fc3f7', // Quimica
+          '#ffb74d', // Geografia
+          '#ff3d3d', // matematicas
+          '#00c853', // Biologia
+          '#0047ab'  // Español
+        ]
+      }]
+    },
+    options: {
+      plugins: {
+        legend: { position: 'bottom' },
+        title: {
+          display: true,
+          text: 'Distribución de Aciertos por Materia'
+        }
+      }
+    }
+  });
   </script>
 </body>
 </html>
